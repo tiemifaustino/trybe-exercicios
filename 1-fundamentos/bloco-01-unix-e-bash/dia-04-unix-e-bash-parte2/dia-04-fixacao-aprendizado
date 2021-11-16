@@ -1,0 +1,81 @@
+1. Observe atentamente o comando a seguir:
+
+cat >> frutas.txt
+maçã
+laranja
+
+Marque a alternativa que descreve corretamente as modificações que o comando acima realizará no arquivo frutas.txt.
+Após a execução do comando, serão adicionadas as frutas "maçã" e "laranja" ao final do arquivo frutas.txt.
+Essa alternativa está correta. O comando cat >> é capaz de editar um arquivo adicionando informações ao seu final.
+
+
+2. Sobre o comando sort no terminal do unix é correto afirmar que:
+Ao se executar o comando sort dataOne.txt > dataTwo.txt o arquivo dataTwo.txt será modificado e terá seu conteúdo ordenado, enquanto o arquivo dataOne.txt permanecerá intacto.
+Essa alternativa está correta. O comando sort irá ordenar o conteúdo do arquivo dataOne.txt e redirecionar a saída para o arquivo dataTwo.txt modificando-o.
+
+
+3. Leia as seguintes afirmativas sobre o operador < no terminal do unix:
+
+I- O operador < é útil para os casos em que é necessário modificar o arquivo original.
+II- O operador < é utilizado para concatenar comandos.
+III- O operador < é utilizado para direcionar comandos para arquivos.
+IV- O operador < é útil para os casos em que é necessário manter o arquivo original intacto.
+
+Quais dessas afirmativas estão corretas?
+III e IV.
+Essa alternativa está correta. O operador < é utilizado para direcionar comandos a arquivos. Ele é muito útil em situações em que é necessário manter o arquivo original intacto.
+
+
+4. Complete as lacunas a seguir:
+
+O comando ______ pode ser utilizado para ______. Ele ainda exibe no terminal informações como ______ e _______.
+who, listar os usuários logados, data, hora de entrada no sistema.
+Essa alternativa está correta. O comando who irá mostrar no terminal uma lista de todos os usuários logados no sistema, além de informações como a data e a hora de login.
+
+
+5. Juliana quer utilizar um operador no terminal para que um comando sirva de entrada para outro comando. Analise as afirmações a seguir e assinale V para verdadeiro e F para falso:
+
+- O comando & pode fazer a concatenação dos comandos para Juliana.
+- Juliana pode utilizar o operador |.
+- Juliana pode utilizar o operador &&.
+F, V, F.
+Essa alternativa está correta. O operador | pode ser utilizado para que um comando sirva de entrada para outro comando no terminal do unix.
+
+
+6. Sobre o comando ls -l é correto afirmar que:
+Dada a saída -rw-rw-r-- 6 usuario usuario 4096 jul 6 16:20 doguinhos-app no terminal, "r" significa permissão para ler o arquivo, enquanto "w" é a permissão para se alterar o arquivo.
+Essa alternativa está correta. O "r" vem da palavra em inglês "read" e significa que a pessoa usuária tem permissão para ler o arquivo, enquanto o "w" vem da palavra em inglês "write" e indica que a pessoa usuária pode modificá-lo.
+
+
+7. Complete as lacunas a seguir:
+
+O comando ______ é utilizado para pausar um processo por um período de tempo. O padrão desse período de tempo é dado em ______.
+sleep, segundos.
+Essa alternativa está correta. O comando sleep pode ser utilizado para forçar uma pausa de um processo por um determinado tempo dado em segundos.
+
+
+8. Para que serve o operador & ?
+Para executar um processo em background.
+Essa alternativa está correta. O operador & permite executar um processo em segundo plano e com isso o terminal continua livre para a utilização do usuário.
+
+
+9. Qual atalho utilizamos no terminal para suspender um processo atualmente em execução?
+Ctrl + Z.
+Essa alternativa está correta. Podemos suspender um processo sendo executado no terminal utilizando o atalho Ctrl + Z.
+
+
+10. Leia as seguintes afirmativas sobre o comando find:
+
+I - find . -type d lista todos os arquivos.
+II - find . -name "*.txt" lista todos os arquivos com a extensão .txt.
+III - find ./teste -type d -name "exemplo*" lista todos os arquivos que comecem com a palavra "exemplo".
+IV - find ./teste -type f -name "exemplo*" lista todos os arquivos que comecem com a palavra "exemplo".
+
+Quais dessas afirmativas estão corretas?
+II e IV.
+Essa alternativa está correta. Para se listar todos os arquivos com a extensão .txt podemos utilizar o comando -name "*.txt". Alem disso, utilizamos o comando find ./teste -type f -name "exemplo*" quando precisamos listar todos os arquivos que comecem com a palavra "exemplo".
+
+
+
+
+

@@ -1,0 +1,64 @@
+1. Sobre o kernel do unix é correto afirmar que:
+Uma das responsabilidades do kernel é fazer a interação entre os softwares e os hardwares do computador.
+Essa alternativa está correta. Uma das responsabilidades do kernel é fazer a interação entre os softwares e os hardwares do computador. Outras responsabilidades incluem o gerenciamento da memória, de processos e arquivos.
+
+
+2. Identifique qual dos itens abaixo traz informações corretas a respeito do terminal do unix.
+Na interface de linha de comando é possível digitar comandos de texto que funcionam como instruções para o computador executar funções específicas.
+Essa alternativa está correta. Na CLI, ou interface de linha de comando, a pessoa usuária pode digitar comandos que são interpretados pelo sistema para executar funções específicas.
+
+
+3. Dentre os itens abaixo, marque a opção que descreve corretamente a ordem das quatro principais funções do shell.
+Ler a linha de comando, interpretar seu significado, executar o comando e retornar o resultado para a pessoa usuária.
+Essa alternativa está correta. O shell primeiro faz a leitura do comando, na sequência ele o interpreta, executa e, por fim, retorna o resultado para a pessoa usuária.
+
+
+4. Assinale a alternativa que completa corretamente as lacunas a seguir:
+
+O unix interpreta cada tarefa ou comando como um ______. Cada processo possui um identificador único chamado ______, que reúne informações como o ______, ______ e ______.
+Processo, PID (Process IDentifier), usuário proprietário, sessão do shell e estado atual.
+Essa alternativa está correta. O unix interpreta cada tarefa ou comando como um processo. Além disso, cada processo possui um identificador único (PID) que reúne informações como o usuário proprietário, a sessão shell e o estado atual.
+
+
+5. Sobre o sistema de arquivos do unix é correto afirmar que:
+O sistema de arquivos do unix é organizado em um sistema de raiz, onde o nível mais alto é o / (barra ou root).
+Essa alternativa está correta. O sistema de arquivos do unix é organizado em um sistema de raiz, onde o nível mais alto é o / (barra ou root).
+
+
+6. Leia as seguintes afirmativas sobre informações de um arquivo unix:
+
+I - A data e a hora da última modificação do arquivo são exemplos de informações que um arquivo unix possui.
+II - O tipo de arquivo e suas permissões são exemplos de informações que um arquivo unix possui.
+III - A data e a hora de criação do arquivo são armazenadas nas informações que um arquivo unix possui.
+IV - Tanto o nome do arquivo, quanto o nome do usuário proprietário, são exemplos de informações que um arquivo unix possui.
+
+Quais dessas afirmativas estão corretas?
+I, II e IV.
+Essa alternativa está correta. Informações como data e hora da última modificação, tipo, nome do arquivo e do usuário proprietário estão contidas em um arquivo unix.
+
+
+7. Sobre o diretório /boot no unix é correto afirmar que:
+O Boot representa os arquivos de configuração para inicialização.
+Essa alternativa está correta. O Boot representa os arquivos de configuração para a inicialização do sistema.
+
+
+8. Sobre o diretório /home do unix é correto afirmar que:
+No linux, o diretório /home contém uma subpasta para cada usuário do sistema.
+Essa alternativa está correta. Cada usuário do sistema, incluindo o usuário root, possui uma subpasta dentro do diretório /home.
+
+
+9. Leia as seguintes afirmativas sobre o diretório /usr no linux:
+
+I - No linux existe um diretório /usr para cada usuário do sistema, incluindo o usuário root.
+II - No diretório /usr são armazenados aplicativos e arquivos que, na maioria das vezes, são acessíveis a todos os usuários.
+III - /usr é uma sigla para a expressão em inglês "unix system resources" ou em português "recursos de sistema unix".
+IV - O diretório /usr pode conter executáveis, bibliotecas e até documentações de softwares utilizados pelos usuários ou administradores do sistema.
+
+Quais dessas afirmativas estão corretas?
+II, III e IV.
+Essa alternativa está correta. O diretório /usr reúne executáveis, bibliotecas e até documentações de softwares utilizados pelos usuários. Além disso, a sigla "usr" significa "recursos de sistema unix".
+
+
+10. Sobre o diretório /dev no linux é correto afirmar que:
+No diretório /dev são armazenados ficheiros especiais associados aos dispositivos do sistema.
+Essa alternativa está correta. No diretório /dev são armazenados ficheiros especiais associados aos dispositivos do sistema, como por exemplo o disco rígido da máquina.

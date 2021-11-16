@@ -1,0 +1,170 @@
+mkdir aula
+cd aula
+mkdir animais
+mkdir nomes
+cd animais
+touch animais_fofinhos.txt animais_raivosos.txt
+cd ../nomes
+touch apelidos.txt
+touch nomes_completos.txt nomes_secretos.txt
+cd ..
+ls -l
+ls -l animais/
+ls -l nomes/
+echo "Oi mãe, eu tô na Trybe!"
+ls
+cd animais/
+echo 'cachorro' > animais_fofinhos.txt 
+cat animais_fofinhos.txt 
+echo 'gato' > animais_fofinhos.txt 
+cat animais_fofinhos.txt 
+echo 'cachorro' >> animais_fofinhos.txt 
+cat animais_fofinhos.txt 
+cat > animais_raivosos.txt 
+echo 'Tigre' > fofinhos_raivosos.txt
+ls
+ls -l
+cat fofinhos_raivosos.txt 
+cat fofinhos_raivosos.txt > animais_fofinhos.txt 
+cat fofinhos_raivosos.txt > animais_raivosos.txt 
+cat animais_fofinhos.txt 
+cat animais_raivosos.txt 
+echo 'gato' > animais_fofinhos.txt 
+echo 'cachorro' >> animais_fofinhos.txt 
+cat > animais_raivosos.txt 
+cat animais_fofinhos.txt 
+cat animais_raivosos.txt 
+cat fofinhos_raivosos.txt 
+cat fofinhos_raivosos.txt >> animais_fofinhos.txt 
+cat fofinhos_raivosos.txt >> animais_raivosos.txt 
+cat animais_fofinhos.txt 
+cat animais_raivosos.txt 
+echo 'hjkjhk'
+echo 'Urso' 
+echo 'Urso' >> animais_fofinhos.txt 
+cat animais_fofinhos.txt 
+ls
+mkdir diretorio
+who
+rm -fr diretorio/
+who
+history 
+tail -3 animais_fofinhos.txt 
+tail -n 3 animais_fofinhos.txt 
+history 
+history | tail -5 
+history | tail -5 | cat > historico.txt
+ls -l
+cat historico.txt 
+history | tail -5 > historico.txt
+cat historico.txt 
+countdown 5m
+cd ../../../
+cd -
+ls
+ls > teste.txt
+cat teste.txt 
+cd ../nomes/
+cat > nomes.txt
+cat > cores.txt
+ls
+sort
+sort nomes.txt 
+cat nomes
+cat nomes.txt 
+cat nomes.txt cores.txt | sort > nomes-e-cores.txt
+cat nomes-e-cores.txt
+cat nomes.txt cores.txt
+cat nomes-e-cores.txt 
+cat nomes.txt 
+cat nomes.txt | sort > nomes.txt
+cat nomes.txt 
+cd ..
+ls -l
+find .
+cd ..
+find .
+cd  aula
+find . -type d
+find . -type f
+find . -name "fofinhos.txt"
+find . -name "raivosos"
+find . -name "*.txt"
+find . -name "raivosos*"
+find . -name "*raivosos*"
+find .
+find animais/ -name "*raivosos*"
+find nomes/ -name "*raivosos*"
+ls -l
+cd nomes/
+ls -l
+chmod a-w apelidos.txt 
+ls -l
+chmod +w apelidos.txt 
+ls -l
+chmod a-x nomes_completos.txt 
+chmod a-rwx nomes_secretos.txt 
+ls -l
+chmod a-r nomes_completos.txt 
+ls -l
+echo 'Trybers' > nomes_secretos.txt 
+cat nomes_secretos.txt 
+echo 'Trybers' > nomes_completos.txt 
+cat nomes_completos.txt 
+ls -l
+chmod a+x nomes_completos.txt 
+ls -l
+cat nomes_completos.txt 
+man mkdir
+mkdir dir1 dir2
+ls
+ls -l
+chmod 750 dir1
+ls -l
+ls
+wget
+wget http://releases.ubuntu.com/18.04.1/ubuntu-18.04.1-desktop-amd64.iso
+ls -l
+fg
+bg
+ls
+ls -l
+jobs
+ps
+ps auxw
+kill 146170
+ls -l
+ps auxw
+top
+wget http://releases.ubuntu.com/18.04.1/ubuntu-18.04.1-desktop-amd64.iso &
+ls -l
+sleep 5
+sleep 30 &
+sleep 20 &
+jobs
+ls -l
+jobs
+ls -l
+jobs
+top
+ps auxw
+jobs
+ls -l
+rm ubuntu-18.04.1-desktop-amd64.iso.1 
+ls -l
+sleep 20
+wget http://releases.ubuntu.com/18.04.1/ubuntu-18.04.1-desktop-amd64.iso &
+jobs
+fg 1
+ls
+cat nomes
+cat nomes.txt 
+cat > nomes.txt 
+sort nomes
+sort nomes.txt 
+sort cores.txt 
+sleep 30
+sleep 30 &
+sleep 20 &
+sleep 10&
+jobs

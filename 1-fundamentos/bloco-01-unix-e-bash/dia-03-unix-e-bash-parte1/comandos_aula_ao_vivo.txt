@@ -1,0 +1,76 @@
+mkdir unix_tests
+cd unix_tests/
+touch trybe.txt
+ls
+ls -l
+cp trybe.txt trybe_backup.txt
+ls
+cp trybe[,_backup2].txt
+cp trybe{,_backup2}.txt
+ls
+mv trybe.txt trybe1.txt
+ls
+ls -l
+pwd
+mkdir backup
+ls
+ls -l
+mv trybe_backup.txt backup
+ls
+ls backup/
+mv trybe_backup2.txt backup/
+ls
+ls backup/
+mkdir backup2
+ls -l
+cd backup
+ls
+cd ..
+ls -l
+mv backup/trybe_backup.txt backup2/
+ls
+ls backup
+ls backup2
+cd backup
+ls
+mv trybe_backup2.txt ../backup2/
+ls
+cd ..
+ls backup2
+pwd
+ls
+ls -l
+ls -a
+ls -la
+ls -lha
+rmdir backup
+ls
+rmdir backup2
+ls -l
+ls -la
+cd .
+clear
+ls
+countdown 1m30s
+ls -l
+head -5 skills.txt 
+tail -4 skills.txt 
+ls -l
+rm .txt
+rm *.txt
+ls -l
+ls backup2/ -l
+rmdir pasta bonita
+rmdir 'pasta bonita'
+ls
+rmdir pasta\ bonitona
+l
+pwd
+ls
+touch skills.txt
+ls
+mv pasta\ 2 'pasta 3'
+ls
+mv pasta\ 3 pasta\ 4
+ls
+mv 'pasta 4' 'pasta 5'

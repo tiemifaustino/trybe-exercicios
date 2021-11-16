@@ -1,0 +1,79 @@
+1. Navegue até a pasta unix_tests ;
+tiemi@tiemi-G3-3590:~$ cd unix_tests/
+
+2. Crie um arquivo texto pelo terminal com o nome skills2.txt e adicione os valores Internet , Unix e Bash , um em cada linha.
+tiemi@tiemi-G3-3590:~/unix_tests$ cat > skills2.txt 
+Internet
+Unix
+Bash
+tiemi@tiemi-G3-3590:~/unix_tests$ cat skills2.txt 
+Internet
+Unix
+Bash
+
+GABARITO
+# Exercício 2
+touch skills2.txt
+echo "Internet" >> skills2.txt
+echo "Unix" >> skills2.txt
+echo "Bash" >> skills2.txt
+
+3. Adicione mais 5 itens à sua lista de skills e depois imprima a lista ordenada no terminal.
+tiemi@tiemi-G3-3590:~/unix_tests$ cat >> skills2.txt 
+Kernel
+Slack
+Zoom
+Chrome
+Darkmode
+tiemi@tiemi-G3-3590:~/unix_tests$ sort < skills2.txt 
+Bash
+Chrome
+Darkmode
+Internet
+Kernel
+Slack
+Unix
+Zoom
+
+
+4. Conte quantas linhas tem o arquivo skills2.txt .
+tiemi@tiemi-G3-3590:~/unix_tests$ wc -l skills2.txt 
+8 skills2.txt
+
+GABARITO
+tiemi@tiemi-G3-3590:~/unix_tests$ cat skills2.txt | wc -l
+8
+
+
+5. Crie um arquivo chamado top_skills.txt usando o skills2.txt , contendo as 3 primeiras skills em ordem alfabética.
+tiemi@tiemi-G3-3590:~/unix_tests$ sort skills2.txt | head -3 > top_skills.txt
+tiemi@tiemi-G3-3590:~/unix_tests$ cat top_skills.txt 
+Bash
+Chrome
+Darkmode
+
+
+6. Crie um novo arquivo chamado phrases2.txt pelo terminal e adicione algumas frases de sua escolha.
+tiemi@tiemi-G3-3590:~/unix_tests$ cat > phrases2.txt
+I can't see anything!
+Learn to walk again.
+To whom it may concern.                            
+There isn't any rotten food on the table.
+tiemi@tiemi-G3-3590:~/unix_tests$ cat phrases2.txt 
+I can't see anything!
+Learn to walk again.
+To whom it may concern.
+There isn't any rotten food on the table.
+
+GABARITO
+# Exercício 6
+touch phrases2.txt
+echo "The quick brown fox jumps over the lazy dog." > phrases2.txt
+echo "Quick fox jumps nightly above wizard." >> phrases2.txt
+echo "The quick onyx goblin jumps over the lazy dwarf." >> phrases2.txt
+
+
+7. Conte o número de linhas que contêm as letras br .
+
+
+
