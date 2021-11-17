@@ -1,4 +1,4 @@
-Portifólio de exercícios realizados no curso de Desenvolvimento Web pela Trybe
+Portfólio de exercícios realizados no curso de Desenvolvimento Web pela Trybe
 
 Turma 19 | Novembro de 2021
 
