@@ -236,7 +236,7 @@ Branch 'trybe-skills-updates' set up to track remote branch 'trybe-skills-update
 ### Abra um Pull Request com uma descrição amigável: O merge deve ser feito apenas quando chegar no exercício 10;
 Feito o Pull Request no GitHub com a mensagem : "Foi realizada a adição de mais uma habilidade a ser aprendida durante o curso no arquivo trybe-skills-copia"
 
-##10 Agora, faça o merge das branches trybe-skills-changes e trybe-skills-updates na branch master , através do Pull Request :
+## 10 Agora, faça o merge das branches trybe-skills-changes e trybe-skills-updates na branch master , através do Pull Request :
 ### Primeiro, vá até a página do primeiro Pull Request (branch trybe-skills-changes ) e faça o merge clicando no botão verde "Merge pull request" ;
 Feito noGitHub Pull request successfully merged and closed
 You’re all set—the trybe-skills-changes branch can be safely deleted.
