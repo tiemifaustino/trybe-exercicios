@@ -24,6 +24,7 @@ if (oddNumbers.length > 0) {
 // 4. Comparar se o tamanho total do array for maior que 0, imprimir o array "oddNumbers" ao contrário imprimir "nenhum valor ímpar encontrado"
 
 
+
 /* let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let result = 0;
 
