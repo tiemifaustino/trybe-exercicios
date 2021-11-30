@@ -1,3 +1,6 @@
+/* Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a mensagem: "nenhum valor ímpar encontrado"; */
+// Fiz como se fosse para listar os números ímpares existentes no array "numbers". Conforme o gabarito era para contar a quantidade, o número de valores ímpares que no total é 6.
+
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 // let numbers = [6, 8, 4, 18, 70, 8, 100, 2, 36, 20];
 
