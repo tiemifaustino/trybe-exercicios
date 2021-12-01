@@ -17,3 +17,21 @@ console.log(reverse);
 // 4. Imprimir a variável "reverse" com a palavra invertida
 console.log(word.length);
 console.log(word[1]);
+
+/* GABARITO
+let word = 'tryber';
+let reverseWord = '';
+
+for (let index = 0; index < word.length; index += 1) {
+  reverseWord += word[word.length - 1 - index];
+}
+
+console.log(reverseWord);
+
+GABARITO OUTRA SOLUÇÃO
+let word = 'tryber';
+let reverseWord = '';
+
+reverseWord = word.split('').reverse().join('');
+
+console.log(reverseWord); */
