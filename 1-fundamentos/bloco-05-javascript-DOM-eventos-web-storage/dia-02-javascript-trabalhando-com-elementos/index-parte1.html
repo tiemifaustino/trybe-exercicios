@@ -19,6 +19,7 @@
             <section id="quartoEUltimoFilho"></section>
         </section>
     </main>
+    
     <script>
         // 1. Acesse o elemento elementoOndeVoceEsta .
         const elemOndeVcEsta = document.getElementById('elementoOndeVoceEsta');
@@ -31,7 +32,7 @@
 
         // 3.Acesse o primeiroFilhoDoFilho e adicione um texto a ele. Você se lembra dos vídeos da aula anterior, como fazer isso?
         let firstKidOfKid = elemOndeVcEsta.firstElementChild;
-        firstKidOfKid.innerText = ('Eu sou o filho do filho')
+        firstKidOfKid.innerText = 'Eu sou o filho do filho'
 
         //   let firstKidOfKid = document.getElementById('primeiroFilhoDoFilho');
 
@@ -40,6 +41,18 @@
         
         // 5. Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta.
         let primeiroFilho = elemOndeVcEsta.previousElementSibling;
+
+        // 6. Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.
+        let texto = elemOndeVcEsta.nextSibling;
+
+        // 7. Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.
+        let thirdKid = elemOndeVcEsta
+
+        // 8. Agora acesse o terceiroFilho a partir de pai .
+        let thirdOfDad = dad.firstElementChild.nextElementSibling.nextElementSibling;
+
+        // ou const terceiroFilho2 = pai.lastElementChild.previousElementSibling;
+
     </script>
 </body>
 </html>
