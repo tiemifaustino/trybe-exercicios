@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="paiDoPai">
+        <section id="pai">
+            <section id="primeiroFilho"></section>
+            <section id="elementoOndeVoceEsta">
+                <section id="primeiroFilhoDoFilho"></section>
+                <section id="segundoEUltimoFilhoDoFilho"></section>
+            </section>
+            Atenção!
+            <section id="terceiroFilho"></section>
+            <section id="quartoEUltimoFilho"></section>
+        </section>
+    </main>
+    
+    <script>
+        // 1. Crie um irmão para elementoOndeVoceEsta .
+        let dad = document.getElementById('pai');
+        // declara uma variável para armazenar o elemento de id pai
+        let irmaoElementoOndeVoceEsta = document.createElement('section');
+        // declara outra variável para armazenar e criar um elemento (sem estar vinculado)
+        irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
+        // adiciona uma id ao elemento que foi criado, declarado na variável irmaoElementoOndeVoceEsta
+        dad.appendChild(irmaoElementoOndeVoceEsta);
+        // adiciona como filho no pai para se tornar irmão do elementoOndeVoceEsta na última posição
+
+        // 2. Crie um filho para elementoOndeVoceEsta .
+        let elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta');
+        let terceiroFilho = document.createElement('section');
+        terceiroFilho.id = 'terceiroFilhoDoFilho';
+        elementoOndeVoceEsta.appendChild(terceiroFilho);
+
+        // 3. Crie um filho para primeiroFilhoDoFilho .
+        let primeiroFilhoDoFilho = document.querySelector('#primeiroFilhoDoFilho');
+        let unicoFilhoDoFilhoDoFilho = document.createElement('section');
+        unicoFilhoDoFilhoDoFilho.id = 'unicoFilhoDoFilhoDoFilho';
+        primeiroFilhoDoFilho.appendChild(unicoFilhoDoFilhoDoFilho);
+
+        // 4. A partir desse filho criado, acesse terceiroFilho .
+        let terceiroFilho = unicoFilhoDoFilhoDoFilho.parentElement.parentElement.nextElementSibling;
+        
+    </script>
+</body>
+</html>
