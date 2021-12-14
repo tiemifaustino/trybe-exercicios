@@ -14,7 +14,10 @@ const myWebpage = document.getElementById('my-spotrybefy');
 function changeTech(event) {
     const tech = document.querySelector('.tech');
     tech.classList.remove('tech');
-    event.target.className = 'tech';
+    // event.target.className = 'tech';
+    event.target.classList.add('tech');
+    input.value = '';
+    console.log(event.target);
 }
 firstLi.addEventListener('click', changeTech);
 secondLi.addEventListener('click', changeTech);
