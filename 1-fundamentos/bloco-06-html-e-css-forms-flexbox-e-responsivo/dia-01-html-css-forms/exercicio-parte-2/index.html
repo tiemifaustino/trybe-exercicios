@@ -7,18 +7,20 @@
     <title>Tela de Login</title>
 </head>
 <body>
+    <h1>Login</h1>
     <form action="" method="GET">
+        
         <!-- 1-Adicione os campos de entrada para email e senha. -->
-        <h1>Login</h1>
-        <p>E-mail:</p>
+        <label for="">E-mail:</label>
         <input type="email" name="user">
-        <p>Senha:</p>
+        
+        <label for="">Senha:</label>
         <input type="password" name="password">
+        
         <!-- 2-Adicione um checkbox com o texto Lembre-me . -->
-        <label for="marcado">
-            <input type="checkbox" value="Lembre-me." id="marcado">Lembre-me
-        </label>
-        <br>
+        <input type="checkbox" id="marcado">Lembre-me
+        <label for="marcado"></label>
+
         <!-- 3-Adicione um botão com o texto Entrar . -->
         <button type="submit">Entrar</button>
     </form>
