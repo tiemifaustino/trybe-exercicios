@@ -8,8 +8,8 @@
 </head>
 <body>
     <!-- 1-Crie um <fieldset> para os dados pessoais: -->
-    <form action="">
-        <fieldset>
+    <form action="" method="get">
+        <fieldset class="campos">
             <label for="nome">Nome:</label>
             <input type="text"
                    name="nome"
@@ -27,6 +27,12 @@
                     name="cpf"
                     id="cpf"
                     maxlength="11"
+                    required>
+            <label for="address">Endereço:</label>
+            <input type="text"
+                    name="cpf"
+                    id="address"
+                    maxlength="200"
                     required>
 
             <button type="submit">Enviar</button>
