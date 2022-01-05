@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica", "Arial", sans-serif;
+  }
+
+.personal-data {
+    margin: 20px;
+    padding: 15px;
+}
+
+h2 {
+    margin: 20px;
+}
