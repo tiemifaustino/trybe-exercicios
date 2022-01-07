@@ -86,12 +86,15 @@ body {
   display: flex;
   flex-direction: column;
   margin: 20px;
+  flex-basis: 350px;
+  order: -1;
 }
 
 .aside-container h3, h4 {
   margin-bottom: 10px;
   text-align: center;
-}
+  align-self: center;
+ }
 
 .aside-container p {
   margin: 10px 0;
