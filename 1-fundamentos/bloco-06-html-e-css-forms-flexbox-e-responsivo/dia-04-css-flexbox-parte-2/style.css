@@ -19,13 +19,15 @@
     display: flex;
     justify-content: center;
     flex-basis: 268px;
+    order: -1;
   }
   
   .menu-container {
     display: flex;
     flex-basis: 500px;
+    /* order: 1; ou order -1 no .logo-container*/
   }
-  
+
   .menu-container ul {
     display: flex;
     justify-content: space-around;
