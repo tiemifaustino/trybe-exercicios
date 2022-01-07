@@ -14,13 +14,16 @@
     display: flex;
   }
   
+/*   1 - Adicione uma propriedade que defina o tamanho Flexbox base para o container da imagem 268px e para o container do menu 500px . Após aplicar as propriedades o header deverá estar similar a imagem abaixo: */
   .logo-container {
     display: flex;
     justify-content: center;
+    flex-basis: 268px;
   }
   
   .menu-container {
     display: flex;
+    flex-basis: 500px;
   }
   
   .menu-container ul {
