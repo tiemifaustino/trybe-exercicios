@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="styles.css">
 <body>
     <h2>Cadastre seu currículo</h2>
-    <!-- 1-Crie um <fieldset> para os dados pessoais: -->
     <form action="" method="get">
+        <!-- 1-Crie um <fieldset> para os dados pessoais: -->
         <fieldset class="personal-data">
             <legend>Dados pessoais</legend>
             <label for="nome">Nome:</label>
@@ -46,7 +46,7 @@
             <select name="state" id="state" required>       
                 <option disabled selected value>Selecione seu estado</option>
             </select>
-            
+            <p></p>
             <input type="radio"
                     name="casa"
                     id="casa"
@@ -57,10 +57,20 @@
                     id="ap"
                     required>
             <label for="ap">Apartamento</label>
-
-
-            <button type="submit">Enviar</button>
         </fieldset>
+        <!-- 2-Crie outro <fieldset> para dados do seu último emprego -->
+        <fieldset class="personal-data">
+            <legend>Histórico Profissional</legend>
+            <label for="nome">Resumo do currículo:</label>
+            <textarea name="resumo"
+                      id="resumo"
+                      cols="80%"
+                      rows="6"
+                      maxlength="1000"
+                      required>
+            </textarea>
+            
+            <button type="submit">Enviar</button>
     </form>
     <script src="script.js"></script>
 </body>
