@@ -35,11 +35,16 @@
   }
   
   section {
-  
+    display: flex;
+    flex-direction: column;
   }
   
   figure {
-      margin: 0;
+      margin: 16px 0;
+  }
+
+  figure img {
+  
   }
   
   figcaption {
