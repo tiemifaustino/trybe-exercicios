@@ -67,14 +67,14 @@ p strong {
 }
 
 /* 1 - A primeira div só poderá aparecer se nossa tela possuir largura mínima de 500px . */
-@media screen and (min-width: 500px) {
+@media (min-width: 500px) {
     .card:nth-of-type(1) {
         display: flex;
     }
 }
 
 /* 2 - A segunda div só poderá aparecer apenas se a largura estiver entre 600px e 1000px . */
-@media screen and (min-width: 600px) and (max-width: 1000px) {
+@media (min-width: 600px) and (max-width: 1000px) {
     .card:nth-of-type(2) {
         display: flex;
     }
@@ -85,15 +85,15 @@ p strong {
     display: flex;
 }
 
-@media screen and (min-width: 650px) and (max-width: 950px) {
+@media (min-width: 650px) and (max-width: 950px) {
     .card:nth-of-type(3) {
         display: none;
     }
 }
 
 /* 4 - Sem alterar a classe trick , faça com que o texto dela apareça somente quando a tela estiver com menos de 500px de largura . */
-@media screen and (max-width: 500px) {
-    .card:nth-of-type(2) {
-        display: none;
+@media (max-width: 500px) {
+    p.trick {
+        color:  black;
     }
 }
