@@ -80,13 +80,13 @@
                 <!-- 2-Crie outro <fieldset> para dados do seu último emprego -->
                 <fieldset class="personal-data">
                     <div>
-                        <legend>Histórico Profissional</legend>
+                        <legend>Dados do último emprego:</legend>
                         <div>
                             <label for="resumo">Resumo do currículo:</label>
                             <textarea name="resumo"
                                     id="resumo"
-                                    cols="80%"
-                                    rows="6"
+                                    cols="100"
+                                    rows="10"
                                     maxlength="1000"
                                     required>
                             </textarea>
@@ -110,17 +110,15 @@
                         <div>
                             <label for="data-inicio">Data de início:</label>
                             <input type="text"
+                                    name="data-inicio"
+                                    id="data-inicio"
                                     required>
                         </div>
-                    
-                        
-                        
-                        
                     </div>
                 </fieldset>
             </div>
             
-            <button type="submit">Enviar</button>
+            <button type="submit" id="submit-button">Enviar</button>
         </form>
     </main>
     
