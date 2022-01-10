@@ -37,11 +37,13 @@
   
   section {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
   }
   
   figure {
-      margin: 16px 0;
+    margin: 16px 0;
   }
 
   figure img {
@@ -49,5 +51,20 @@
   }
   
   figcaption {
-    font-size: .8em;
+    font-size: 1.1rem;
+  }
+
+  @media screen and (min-width: 494px) {
+    body {
+      background-color: #81B29A;
+      margin: 30px;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+    }
+
+    article {
+      font-size: 1.3rem;
+    }
   }
