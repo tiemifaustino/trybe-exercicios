@@ -39,6 +39,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 20px;
   }
   
@@ -67,4 +68,8 @@
     article {
       font-size: 1.3rem;
     }
+  }
+
+  @media screen {
+      
   }
