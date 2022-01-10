@@ -86,9 +86,14 @@ p strong {
 }
 
 @media screen and (min-width: 650px) and (max-width: 950px) {
-    .card:nth-of-type(2) {
+    .card:nth-of-type(3) {
         display: none;
     }
 }
 
 /* 4 - Sem alterar a classe trick , faça com que o texto dela apareça somente quando a tela estiver com menos de 500px de largura . */
+@media screen and (max-width: 500px) {
+    .card:nth-of-type(2) {
+        display: none;
+    }
+}
