@@ -8,6 +8,17 @@ const objectGenerator = (fullName) => {
    };
 }
 console.log(objectGenerator('Tiemi Faustino'));
+// { fullName: 'Tiemi Faustino', email: 'tiemi_faustino@trybe.com' }
+
+const newEmployees2 = (objectGenerator) => {
+    const employees = {
+      id1: objectGenerator('Pedro Guerra'), // Nome: Pedro Guerra -> Chame sua função passando o nome Pedro Guerra como parâmetro, substituindo as aspas
+      id2: objectGenerator('Luiza Drumond'), // Nome: Luiza Drumond -> Chame sua função passando o nome Luiza Drumond como parâmetro, substituindo as aspas
+      id3: objectGenerator('Carla Paiva'), // Nome: Carla Paiva -> Chame sua função passando o nome Carla Paiva como parâmetro, substituindo as aspas
+    }
+    return employees;
+  };
+  console.log(newEmployees2(objectGenerator));
 
 const newEmployees = (callback) => {
     const employees = {
@@ -19,3 +30,10 @@ const newEmployees = (callback) => {
   };
 
 console.log(newEmployees(objectGenerator));
+/*
+  {
+    id1: { fullName: 'Pedro Guerra', email: 'pedro_guerra@trybe.com' },
+    id2: { fullName: 'Luiza Drumond', email: 'luiza_drumond@trybe.com' },
+    id3: { fullName: 'Carla Paiva', email: 'carla_paiva@trybe.com' }
+  } 
+  */
