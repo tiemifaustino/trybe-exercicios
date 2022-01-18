@@ -37,3 +37,10 @@ console.log(newEmployees(objectGenerator));
     id3: { fullName: 'Carla Paiva', email: 'carla_paiva@trybe.com' }
   } 
   */
+
+console.log('Tiemi Hayashi de Assis Faustino'.replace(/ /g, '_'));
+console.log('Tiemi Hayashi de Assis Faustino'.replaceAll(' ', '_'));
+/* 
+  2 - Desenvolva uma HOF que retorna o resultado de um sorteio. Esta HOF irá gerar um número aleatório entre 1 e 5 recebendo como parâmetros o número apostado e uma função que checa se o número apostado é igual ao número sorteado. O retorno da sua HOF deve ser uma string (Ex: "Tente novamente" ou "Parabéns você ganhou"). */
+
+
