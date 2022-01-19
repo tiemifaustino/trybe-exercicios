@@ -1,5 +1,4 @@
 // 1 - Utilize o find para retornar o primeiro número do array que é divisível por 3 e 5 , caso ele exista:
-
 const numbers = [19, 21, 30, 3, 45, 22, 15];
 
 const findDivisibleBy3And5 = (array) => {
@@ -13,3 +12,14 @@ const findDivisibleBy3And5 = (array) => {
 
 console.log(findDivisibleBy3And5(numbers));
 
+
+
+// 2 - Utilize o find para encontrar o primeiro nome com cinco letras, caso ele exista:
+const names = ['João', 'Irene', 'Fernando', 'Maria'];
+
+const findNameWithFiveLetters = (array) => {
+  // Adicione seu código aqui:
+  return array.find((element) => element.length === 5); 
+}
+
+console.log(findNameWithFiveLetters(names));
