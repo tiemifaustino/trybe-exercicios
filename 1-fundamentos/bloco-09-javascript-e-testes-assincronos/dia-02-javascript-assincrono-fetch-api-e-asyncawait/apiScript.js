@@ -1,3 +1,9 @@
+function insertDOM(data) {
+  const jokeContainer = document.getElementById('jokeContainer');
+
+  jokeContainer.innerText = data.joke;
+}
+
 // apiScript.js
 const API_URL = 'https://icanhazdadjoke.com/';
 
@@ -9,7 +15,8 @@ const fetchJoke = () => {
   };
 
   fetch(API_URL, myObject)
-    .then(response => console.log(response));
+    .then(response => response.json())
+    .then(insertDOM);
 };
 
 window.onload = () => fetchJoke();
