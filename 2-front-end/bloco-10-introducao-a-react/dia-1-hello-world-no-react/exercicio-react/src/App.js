@@ -7,10 +7,12 @@ const Task = (value) => {
   );
 }
 
+const appointments = ['React', 'Componentes', 'Hello World'];
+
 function App() {
   return (
     <div className="App">
-      { Task('Iniciando Front-End') }
+      { appointments.map((appointment) => Task(appointment)) }
     </div>
   );
 }
