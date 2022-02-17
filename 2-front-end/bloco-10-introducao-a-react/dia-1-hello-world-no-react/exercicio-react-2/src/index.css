@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +17,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header {
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.div-header {
+  background-color: blueviolet;
+  padding: 20px 40px;
+  border-radius: 15px;
+  color: rgb(237, 226, 248);
+}
+
