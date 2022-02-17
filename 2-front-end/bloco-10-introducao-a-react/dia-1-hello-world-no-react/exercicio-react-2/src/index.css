@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(224, 207, 240);
 }
 
 code {
@@ -18,7 +19,7 @@ code {
     monospace;
 }
 
-.header {
+.header , .footer {
   margin: 20px 0;
   padding: 10px;
   display: flex;
@@ -26,10 +27,27 @@ code {
   flex-direction: column;
 }
 
-.div-header {
+.div-header , .div-footer {
   background-color: blueviolet;
   padding: 20px 40px;
   border-radius: 15px;
   color: rgb(237, 226, 248);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  margin: 10px;
+  padding: 25px;
+  font-size: 1.2rem;
+  line-height: 40px;
+  background-color: rgb(183, 143, 219);
+  color: rgb(59, 5, 112);
+  width: 600px;
+  border-radius: 20px;
 }
 
