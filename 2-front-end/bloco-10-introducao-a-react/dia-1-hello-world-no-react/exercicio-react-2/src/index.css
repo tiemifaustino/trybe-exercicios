@@ -37,14 +37,20 @@ code {
   display: flex;
   width: 100%;
   justify-content: center;
-  align-content: center;
-  gap: 15px;
+}
+
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 1220px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  padding: 25px;
+  padding: 20px;
   font-size: 1.2rem;
   line-height: 40px;
   background-color: rgb(183, 143, 219);
