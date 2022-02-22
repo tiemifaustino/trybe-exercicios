@@ -25,25 +25,27 @@ class App extends React.Component {s
   }
   
   handleClickButton2() {
-    this.setState((estadoAnterior, _props) => ({
+    this.setState((estadoAnterior) => ({
       clickButtonTwo: estadoAnterior.clickButtonTwo + 1,
     }))
-    console.log('Você clicou no botão 2', this);
+    console.log('Você clicou no botão 2', this.state.clickButtonTwo);
   }
   
   handleClickButton3() {
-    this.setState((estadoAnterior, _props) => ({
-      clickButtonThree: estadoAnterior.clickButtonThree + 1,
-    }))
-    console.log('Clicou no botão 3', this);
+    // Descontrução do "estadoAnterior.clickButtonThree" para utilizar somente a chave "clickButtonThree" 
+    this.setState(({ clickButtonThree }) => ({
+      // clickButtonThree: estadoAnterior.clickButtonThree + 1,
+      clickButtonThree: clickButtonThree + 1,
+    }));
+    console.log('Clicou no botão 3', this.state.clickButtonThree);
   }
 
   render() {
     return (
       <>
-        <button type="button" onClick={this.handleClick}>{this.state.clickButtonOne}</button>
-        <button type="button" onClick={this.handleClickButton2}>{this.state.clickButtonTwo}</button>
-        <button type="button" onClick={this.handleClickButton3}>{this.state.clickButtonThree}</button>
+        <button type="button" onClick={this.handleClick}>Button One = {this.state.clickButtonOne}</button>
+        <button type="button" onClick={this.handleClickButton2}>Button Two = {this.state.clickButtonTwo}</button>
+        <button type="button" onClick={this.handleClickButton3}>Button Three = {this.state.clickButtonThree}</button>
       </>
     );
   }
