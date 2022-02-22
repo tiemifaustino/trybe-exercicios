@@ -3,8 +3,10 @@ import PersonalForm from "./PersonalForm";
 
 class Form extends Component {
   render() {
+    // const { changeHandler } = this.props;
+
     return (
-      <PersonalForm />
+      <PersonalForm changeHandler={this.props.changeHandler} />
     )
   }
 }
