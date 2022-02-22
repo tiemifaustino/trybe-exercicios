@@ -54,6 +54,8 @@ class App extends React.Component {s
         <button
           type="button"
           onClick={this.handleClick}
+          
+          // Para renderizarmos as cores, precisamos acrescentar a função que contém a nossa lógica ao "inline style", passando o estado correspondente como parâmetro
           style={{ backgroundColor: this.getButtonColor(this.state.clickButtonOne) }}
           >Button One = {this.state.clickButtonOne}
         </button>
