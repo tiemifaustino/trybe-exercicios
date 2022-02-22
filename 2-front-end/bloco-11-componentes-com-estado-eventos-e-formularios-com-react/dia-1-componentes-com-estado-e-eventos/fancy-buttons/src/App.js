@@ -9,18 +9,17 @@ class App extends React.Component {s
     this.state = {
       numeroDeCliques: 0
     }
-
+    
     this.handleClick = this.handleClick.bind(this);
     this.handleClickButton2 = this.handleClickButton2.bind(this);
     this.handleClickButton3 = this.handleClickButton3.bind(this);
   }
   
   handleClick() {
-    this.setState({
-      numeroDeCliques: 1
-    })
-
-    console.log('Clicou no botão', this);
+    this.setState((estadoAnterior, _props) => ({
+      numeroDeCliques: estadoAnterior.numeroDeCliques + 1,
+    }))
+    console.log('Clicou no botão', this.state.numeroDeCliques);
   }
   
   handleClickButton2() {
