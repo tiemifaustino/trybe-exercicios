@@ -7,9 +7,11 @@ class App extends React.Component {s
     super();
 
     this.state = {
-      numeroDeCliques: 0
+      clickButtonOne: 0,
+      clickButtonTwo: 0,
+      clickButtonThree: 0,
     }
-    
+
     this.handleClick = this.handleClick.bind(this);
     this.handleClickButton2 = this.handleClickButton2.bind(this);
     this.handleClickButton3 = this.handleClickButton3.bind(this);
@@ -17,25 +19,31 @@ class App extends React.Component {s
   
   handleClick() {
     this.setState((estadoAnterior, _props) => ({
-      numeroDeCliques: estadoAnterior.numeroDeCliques + 1,
+      clickButtonOne: 1,
     }))
-    console.log('Clicou no botão', this.state.numeroDeCliques);
+    console.log('Clicou no botão', this.state.clickButtonOne)
   }
   
   handleClickButton2() {
+    this.setState((estadoAnterior, _props) => ({
+      clickButtonTwo: estadoAnterior.clickButtonTwo + 1,
+    }))
     console.log('Você clicou no botão 2', this);
   }
   
   handleClickButton3() {
+    this.setState((estadoAnterior, _props) => ({
+      clickButtonThree: estadoAnterior.clickButtonThree + 1,
+    }))
     console.log('Clicou no botão 3', this);
   }
 
   render() {
     return (
       <>
-        <button type="button" onClick={this.handleClick}>{this.state.numeroDeCliques}</button>
-        <button type="button" onClick={this.handleClickButton2}>My Button 2</button>
-        <button type="button" onClick={this.handleClickButton3}>My Button 3</button>
+        <button type="button" onClick={this.handleClick}>{this.state.clickButtonOne}</button>
+        <button type="button" onClick={this.handleClickButton2}>{this.state.clickButtonTwo}</button>
+        <button type="button" onClick={this.handleClickButton3}>{this.state.clickButtonThree}</button>
       </>
     );
   }
