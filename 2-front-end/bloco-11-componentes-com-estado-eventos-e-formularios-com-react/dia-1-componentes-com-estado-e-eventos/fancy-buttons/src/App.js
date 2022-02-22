@@ -40,13 +40,36 @@ class App extends React.Component {s
     console.log('Clicou no botão 3', this.state.clickButtonThree);
   }
 
+   // Para essa função, não precisamos utilizar o bind porque ela é utilizada apenas dentro do contexto do componente App
+  getButtonColor(number) {
+    // Muda a cor para verde se o número for par
+    return number % 2 === 0 ? 'green' : 'pink';
+  }
+
   render() {
+    const { clickButtonTwo, clickButtonThree } = this.state;
+
     return (
-      <>
-        <button type="button" onClick={this.handleClick}>Button One = {this.state.clickButtonOne}</button>
-        <button type="button" onClick={this.handleClickButton2}>Button Two = {this.state.clickButtonTwo}</button>
-        <button type="button" onClick={this.handleClickButton3}>Button Three = {this.state.clickButtonThree}</button>
-      </>
+      <div>
+        <button
+          type="button"
+          onClick={this.handleClick}
+          style={{ backgroundColor: this.getButtonColor(this.state.clickButtonOne) }}
+          >Button One = {this.state.clickButtonOne}
+        </button>
+        <button
+          type="button"
+          onClick={this.handleClickButton2}
+          style={{ backgroundColor: this.getButtonColor(clickButtonTwo) }}
+          >Button Two = {this.state.clickButtonTwo}
+        </button>
+        <button
+          type="button"
+          onClick={this.handleClickButton3}
+          style={{ backgroundColor: this.getButtonColor(clickButtonThree) }}
+          >Button Three = {this.state.clickButtonThree}
+        </button>
+      </div>
     );
   }
 }
