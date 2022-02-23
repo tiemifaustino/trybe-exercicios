@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+.campos-form {
+  margin: 5px;
+  padding: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
