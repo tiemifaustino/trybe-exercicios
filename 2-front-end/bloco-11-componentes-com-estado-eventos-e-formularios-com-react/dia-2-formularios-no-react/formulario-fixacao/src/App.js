@@ -7,17 +7,21 @@ class App extends Component {
 
     this.state = {
       name: '',
+      email: '',
+      age: '',
+      anecdote: '',
     }
   }
 
-  handleChange = (event) => {
-    this.setState((previousState) => ({
-      name: event.target.value,
-    }))
+  handleChange = ({ target }) => {
+    const { name, value } = target;
+    this.setState({
+      [name]: value,
+    })
   }
 
   render() {
-    const { name } = this.state;
+    const { name, email, age, anecdote } = this.state;
 
     return (
       <div className="App">
@@ -31,7 +35,7 @@ class App extends Component {
               id="name"
               name="name"
               type="text"
-              value={ name }
+              value={name}
               onChange={this.handleChange}
             />
           </label>
@@ -43,6 +47,8 @@ class App extends Component {
               id="email"
               name="email"
               type="email"
+              value={email}
+              onChange={this.handleChange}
             />
           </label>
 
@@ -52,6 +58,8 @@ class App extends Component {
             <select
               id="age"
               name="age"
+              value={age}
+              onChange={this.handleChange}
             >
               <option value="">Selecione</option>
               <option value="adult">Maior que 18</option>
@@ -65,6 +73,8 @@ class App extends Component {
             <textarea
               id="anecdote"
               name="anecdote"
+              value={anecdote}
+              onChange={this.handleChange}
             />
           </label>
 
