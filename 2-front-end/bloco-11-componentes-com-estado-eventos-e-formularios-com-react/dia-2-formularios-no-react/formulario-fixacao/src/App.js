@@ -10,11 +10,14 @@ class App extends Component {
       email: '',
       age: '',
       anecdote: '',
+      agreement: false,
     }
   }
 
   handleChange = ({ target }) => {
-    const { name, value } = target;
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
     this.setState({
       [name]: value,
     })
@@ -74,6 +77,18 @@ class App extends Component {
               id="anecdote"
               name="anecdote"
               value={anecdote}
+              onChange={this.handleChange}
+            />
+          </label>
+
+          <label className="campos-form" htmlFor="agreement">
+            Concorda em enviar
+            {' '}
+            <input
+              id="agreement"
+              name="agreement"
+              type="checkbox"
+              // value={}
               onChange={this.handleChange}
             />
           </label>
