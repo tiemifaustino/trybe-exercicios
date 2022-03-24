@@ -38,8 +38,13 @@
         index: 0,
       };
 
+      // 2 - Crie um reducer, implementando um switch retornando apenas o estado inicial como default (colocar o reducer como parâmetro para o createStore).
+      const reducer = (state = ESTADO_INICIAL, action) => {
+          return state;
+      }
+
       // 1 - Crie uma store para a nossa aplicação.
-      const store = Redux.createStore(() => {})
+      const store = Redux.createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
     </script>
   </body>
 </html>
