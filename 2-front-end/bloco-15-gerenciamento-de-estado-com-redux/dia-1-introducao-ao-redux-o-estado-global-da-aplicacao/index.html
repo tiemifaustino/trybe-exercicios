@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- a linha 8 é um import para usar o Redux -->
     <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
     <style>
       body {
@@ -38,10 +39,33 @@
         index: 0,
       };
 
+      // 3 - Incremente o switch criado no exercício anterior com as actions NEXT_COLOR e PREVIOUS_COLOR . Essas actions devem alterar o valor index guardado no ESTADO_INICIAL 
+      // ACTIONS
+      const NEXT_COLOR = {
+        type: "NEXT_COLOR",
+      }
+
+      const PREVIOUS_COLOR = {
+        type: "PREVIOUS_COLOR",
+      }
+
       // 2 - Crie um reducer, implementando um switch retornando apenas o estado inicial como default (colocar o reducer como parâmetro para o createStore).
       const reducer = (state = ESTADO_INICIAL, action) => {
-          return state;
-      }
+        switch (action.type) {
+          case NEXT_COLOR:
+            return {
+              ...state,
+              index: state.index === (state.colors.length - 1) ? 0 : state.index + 1,
+            };
+          case PREVIOUS_COLOR:
+            return {
+              ...state,
+              index: state.index === 0 ? (state.colors.length - 1) : state.index - 1,
+            };
+          default:
+            return state;
+        }
+      };
 
       // 1 - Crie uma store para a nossa aplicação.
       const store = Redux.createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
