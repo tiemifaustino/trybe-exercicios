@@ -68,7 +68,26 @@
       };
 
       // 1 - Crie uma store para a nossa aplicação.
-      const store = Redux.createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+      const store = Redux.createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+      // 4 - Crie eventListeners que escutam os cliques de cada botão, o Previous color e o Next color, e realizam um dispatch com o respectivo action.type de cada.
+      const previousColorButton = document.getElementById('previous');
+      const nextColorButton = document.getElementById('next');
+
+      previousColorButton.addEventListener('click', () => {
+        // coloca o ACTION dentro do store.dispatch para ele enviar para o reducer
+        // (Atribui o ACTION como argumento do dispatch)
+        store.dispatch(PREVIOUS_COLOR);
+      });
+
+      nextColorButton.addEventListener('click', () => {
+        store.dispatch(NEXT_COLOR);
+      });
+
+      // store.subscribe(() => {
+      //   const estadoGlobal = store.getState();
+      // })
+
     </script>
   </body>
 </html>
