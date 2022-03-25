@@ -54,6 +54,9 @@
       // 1 - Combine os reducers existentes com a função combineReducers e salve-o em uma constante.
       const reducersTogether = Redux.combineReducers({ meuPrimeiroReducer, meuSegundoReducer });
 
+      // 2 - Crie uma store com a combinação dos reducers.
+      const store = Redux.createStore(reducersTogether);
+
 
     </script>
   </body>
