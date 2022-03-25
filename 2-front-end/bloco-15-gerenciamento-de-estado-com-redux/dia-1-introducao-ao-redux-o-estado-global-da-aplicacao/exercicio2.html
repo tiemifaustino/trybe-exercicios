@@ -37,17 +37,17 @@
       };
 
       // 3 - Crie actions que alterem o nome e o sobrenome dos estados iniciais, e adapte seu respectivo reducer.
-      const actionFirstReducer = (nome, sobrenome) => ({
+      const actionFirstReducer = {
         type: 'FIRST',
-        nome,
-        sobrenome,
-      });
+        nome: 'Danilo',
+        sobrenome: 'Faustino'
+      };
 
-      const actionSecondReducer = (nome, sobrenome) => ({
+      const actionSecondReducer = {
         type: 'SECOND',
-        nome,
-        sobrenome,
-      });
+        nome: 'Tiemi',
+        sobrenome: 'Faustino'
+      };
 
       const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
         switch (action.type) {
@@ -79,7 +79,26 @@
       // 2 - Crie uma store com a combinação dos reducers.
       const store = Redux.createStore(reducersTogether);
 
+      // 5 - Adicione um store.subscribe() para atualizar as informações na página de acordo com o que temos armazenado na store . Quando a página carregar o nome renderizado deve ser alterado após alguns segundos.
+      store.subscribe(() => {
+        // const estadoGlobal = store.getState();
+        //  document.getElementById('nome-1').innerHTML = estadoGlobal.meuPrimeiroReducer.nome;
+        const { meuPrimeiroReducer, meuSegundoReducer } = store.getState();
+        document.getElementById('nome-1').innerHTML = meuPrimeiroReducer.nome;
+        document.getElementById('sobrenome-1').innerText = meuPrimeiroReducer.sobrenome;
 
+        document.getElementById('nome-2').innerText = meuSegundoReducer.nome;
+        document.getElementById('sobrenome-2').innerText = meuSegundoReducer.sobrenome;
+      })
+
+       // 4 - Crie dispatchs para alterar os nomes após alguns segundos depois que a página carregar. Segue uma dica de como resolver este exercício:
+      window.onload = () => {
+        setTimeout(() => {
+          //Seu dispatch vem aqui //
+          store.dispatch(actionFirstReducer);
+          store.dispatch(actionSecondReducer);
+        }, 3000);
+      };
     </script>
   </body>
 </html>
