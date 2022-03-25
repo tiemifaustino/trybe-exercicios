@@ -25,6 +25,11 @@
         height: 50px;
         width: 200px;
       }
+
+      #value, p {
+        color: white;
+        text-shadow: 1px 2px black;
+      }
       </style>
   </head>
   <body>
@@ -32,6 +37,8 @@
       <p>Color: <span id="value">white</span></p>
       <button id="previous">Previous color</button>
       <button id="next">Next color</button>
+      <br>
+      <button id="random">Random Color</button>
     </div>
     <script>
       const ESTADO_INICIAL = {
@@ -42,29 +49,8 @@
       // 3 - Incremente o switch criado no exercício anterior com as actions NEXT_COLOR e PREVIOUS_COLOR . Essas actions devem alterar o valor index guardado no ESTADO_INICIAL 
       // ACTIONS
       const NEXT_COLOR = { type: 'NEXT' }
-
       const PREVIOUS_COLOR = { type: 'PREVIOUS' }
-
-      // 2 - Crie um reducer, implementando um switch retornando apenas o estado inicial como default (colocar o reducer como parâmetro para o createStore).
-      const reducer = (state = ESTADO_INICIAL, action) => {
-        switch (action.type) {
-          case 'NEXT':
-            return {
-              ...state,
-              index: state.index === state.colors.length - 1 ? 0 : state.index + 1,
-            };
-          case 'PREVIOUS':
-            return {
-              ...state,
-              index: state.index === 0 ? state.colors.length - 1 : state.index - 1,
-            };
-          default:
-            return state;
-        }
-      };
-
-      // 1 - Crie uma store para a nossa aplicação.
-      const store = Redux.createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+      const RANDOM_COLOR = { type: 'RANDOM'}
 
       // 4 - Crie eventListeners que escutam os cliques de cada botão, o Previous color e o Next color, e realizam um dispatch com o respectivo action.type de cada.
       const previousColorButton = document.getElementById('previous');
@@ -79,6 +65,64 @@
       nextColorButton.addEventListener('click', () => {
         store.dispatch(NEXT_COLOR);
       });
+
+      // 6 - Crie um botão com o texto Random color , um eventListener e uma action no reducer adicionando uma cor aleatória ao array colors guardado em nosso estado inicial. Faça também com que essa cor seja mostrada ao ser criada, alterando o estado index para a posição dela.
+      const randomButton = document.getElementById('random');
+      randomButton.addEventListener('click', () => store.dispatch(RANDOM_COLOR));
+      
+      function criarCor() {
+        const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+        let cor = '#';
+        // cria um número aleatório multiplicando pelo tamanho do array oneChar
+        const aleatorio = () => Math.floor(Math.random() * oneChar.length);
+        for (let i = 0; i < 6; i += 1) {
+            cor += oneChar[aleatorio()];
+            // # + uma posição aleatória do array por 6 loopings (6 vezes)
+            // Ex.: #65F8D7
+        }
+        return cor;
+      }
+
+      // se declarar numa variável, irá ser criada a cor somente uma vez
+      // const getRandomColor = criarCor();
+
+      // 2 - Crie um reducer, implementando um switch retornando apenas o estado inicial como default (colocar o reducer como parâmetro para o createStore).
+      const reducer = (state = ESTADO_INICIAL, action) => {
+        switch (action.type) {
+          // no case, declara o que está dentro da chave type (ex. a string 'NEXT')
+          case 'NEXT':
+            return {
+              ...state,
+              index: state.index === state.colors.length - 1 ? 0 : state.index + 1,
+            };
+          case 'PREVIOUS':
+            return {
+              ...state,
+              index: state.index === 0 ? state.colors.length - 1 : state.index - 1,
+            };
+          case 'RANDOM':
+          return {
+            ...state,
+            colors: [...state.colors, criarCor()],
+            index: state.colors.length,
+            // se colocar a última posição do array, (state.colors.length -1) ele irá para a última posição antes de adicionar a cor aleatória
+            // ex. ultima posição do array 'yellow' (index 5)
+            // adiciona a cor aleatória, a última posição vai para (index 6) porém ele mostra a última posição ANTES de adicionar a cor na última posição atualizada, ele irá mostrar 'yellow'
+
+            // colocando o tamanho do array (state.colors.length) que será 6
+            // colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+            //             0        1        2       3        4       5
+            // ele irá adicionar a cor no final do array e irá para essa posição que não existia antes, mas existe agora ao adicionar
+            // colors: ['white', 'black', 'red', 'green', 'blue', 'yellow', '#361D96'],
+            //             0        1        2       3        4       5         6
+          };
+          default:
+            return state;
+        }
+      };
+
+      // 1 - Crie uma store para a nossa aplicação.
+      const store = Redux.createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
       // 5 - Faça o subscribe da store, alterando o innerHTML da tag com id value para a cor atual e o style do elemento com id container . Você deverá ser capaz de ver as cores mudando ao fundo, e o nome da cor exibida.
       store.subscribe(() => {
