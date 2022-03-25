@@ -22,7 +22,6 @@
       <p>Cidade: <span id="cidade-2">São Paulo</span></p>
     </div>
     <script>
-     
       const ESTADO_INICIAL_1 = {
         nome: 'Rodrigo',
         sobrenome: 'Santos da Silva',
@@ -37,8 +36,26 @@
         cidade: 'São Paulo',
       };
 
+      // 3 - Crie actions que alterem o nome e o sobrenome dos estados iniciais, e adapte seu respectivo reducer.
+      const actionFirstReducer = (nome, sobrenome) => ({
+        type: 'FIRST',
+        nome,
+        sobrenome,
+      });
+
+      const actionSecondReducer = (nome, sobrenome) => ({
+        type: 'SECOND',
+        nome,
+        sobrenome,
+      });
+
       const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
         switch (action.type) {
+          case 'FIRST':
+            return {
+              nome: action.nome,
+              sobrenome: action.sobrenome,
+            }
           default:
             return state;
         }
@@ -46,6 +63,11 @@
 
       const meuSegundoReducer = (state = ESTADO_INICIAL_2, action) => {
         switch (action.type) {
+          case 'SECOND':
+            return {
+              nome: action.nome,
+              sobrenome: action.sobrenome,
+            }
           default:
             return state;
         }
