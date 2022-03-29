@@ -26,13 +26,9 @@ class Login extends Component {
     // O método test() executa uma busca por uma correspondência entre uma expressão regular e uma string. Retorna true ou false.
     // se o e-mail for válido e o campo de senha for maior ou igual a 6 caracteres, o button será ativado.
     if (emailREGEX.test(email) && password.length >= 6) {
-      this.setState({
-        isButtonDisabled: false,
-      });
+      this.setState({ isButtonDisabled: false });
     } else {
-      this.setState({
-        isButtonDisabled: true,
-      });
+      this.setState({ isButtonDisabled: true });
     }
   }
 
