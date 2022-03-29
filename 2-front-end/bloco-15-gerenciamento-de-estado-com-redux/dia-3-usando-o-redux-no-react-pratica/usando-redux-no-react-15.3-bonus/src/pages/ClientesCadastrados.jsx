@@ -9,6 +9,8 @@ class ClientesCadastrados extends Component {
       <div>
 
         {
+          // se o email não foi salvo no state, não foi feito o login
+          // se o email estiver vazio renderizar "Login não efetuado"
           email === ''
             ? <h2>Login não efetuado</h2>
             : (
