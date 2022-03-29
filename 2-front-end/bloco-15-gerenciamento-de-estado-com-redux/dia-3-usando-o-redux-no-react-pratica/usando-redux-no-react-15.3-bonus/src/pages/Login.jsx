@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { saveEmailLogin } from '../redux/actions';
 
 class Login extends Component {
   constructor(props) {
     super(props);
     
+    // estado inicial da aplicação
     this.state = {
       email: '',
       password: '',
@@ -11,6 +14,7 @@ class Login extends Component {
     }
   }
 
+  // função que salva os values no estado do componente
   // ao digitar no input, o value será salvo no estado (onChange)
   // o name do input será a chave
   // o value do input será o value da chave
@@ -19,10 +23,10 @@ class Login extends Component {
     this.setState({ [name]: value }, this.validateInputsForm)
   }
 
+  // função que valida os inputs de email e passwourd
   validateInputsForm = () => {
     const emailREGEX = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g
     const { email, password } = this.state;
-
     // O método test() executa uma busca por uma correspondência entre uma expressão regular e uma string. Retorna true ou false.
     // se o e-mail for válido e o campo de senha for maior ou igual a 6 caracteres, o button será ativado.
     if (emailREGEX.test(email) && password.length >= 6) {
@@ -32,6 +36,18 @@ class Login extends Component {
     }
   }
 
+  // função que é disparada quando o forms é submetido
+  submitHandler = (event) => {
+    event.preventDefault();
+    const { email } = this.state;
+    const { saveEmailLogin, history } = this.props;
+    // a propriedade (chave) do mapDispatchToProps é também uma função que chama o dispatch e atribui o argumento recebido para a action que está dentro do dispatch
+    // o email é o email que está no this.state (no estado do componente)
+    saveEmailLogin(email);
+    // o history.push redireciona para a página de clientes cadastrados
+    history.push("/clientes");
+  }
+
   render() {
     const { isButtonDisabled } = this.state;
 
@@ -39,7 +55,7 @@ class Login extends Component {
       <div>
         <h1>Login</h1>
 
-        <form>
+        <form onSubmit={ this.submitHandler }>
           <label htmlFor="email">
             Email:
             <input type="email" name="email" id="email" onChange={ this.inputHandler }/>
@@ -57,7 +73,11 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+  saveEmailLogin: (email) => dispatch(saveEmailLogin(email)),
+})
+
+export default connect(null, mapDispatchToProps)(Login);
 
 /* 
   Referência regex e-mail: https://regexr.com/3e48o
