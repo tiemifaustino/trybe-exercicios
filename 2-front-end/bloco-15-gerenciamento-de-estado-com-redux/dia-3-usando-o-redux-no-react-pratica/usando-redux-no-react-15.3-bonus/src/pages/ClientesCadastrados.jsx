@@ -23,8 +23,10 @@ class ClientesCadastrados extends Component {
   }
 }
 
+// A página de Clientes cadastrados deverá listar todos os clientes.
 const mapStateToProps = (state) => ({
   email: state.emailLoginReducer.email,
+  // clients: state.clientsReducer.clients,
 })
 
 export default connect(mapStateToProps)(ClientesCadastrados);
