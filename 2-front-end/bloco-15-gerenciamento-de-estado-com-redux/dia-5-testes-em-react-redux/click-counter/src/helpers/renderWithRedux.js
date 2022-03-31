@@ -9,10 +9,18 @@ import clickReducer from '../redux/reducers';
 
 const renderWithRedux = (
   component,
-  { initialState, store = createStore(combineReducers({ clickReducer }), initialState) } = {}
+  {
+    initialState,
+    store = createStore(combineReducers({ clickReducer }),
+    initialState)
+  } = {}
 ) => {
   return {
-    ...render(<Provider store={store}>{component}</Provider>),
+    ...render(
+      <Provider store={store}>
+        {component}
+      </Provider>
+      ),
     store,
   }
 }
