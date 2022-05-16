@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  ghost:
+    container_name: container-da-tiemi
+    image: ghost:1-alpine
+    ports:
+      - 2368:2368
