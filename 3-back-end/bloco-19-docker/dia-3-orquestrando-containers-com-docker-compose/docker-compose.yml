@@ -1,8 +1,24 @@
 version: '3'
 
 services:
+
   ghost:
     container_name: container-da-tiemi
     image: ghost:1-alpine
     ports:
       - 2368:2368
+    depends_on:
+      - db
+    environment:
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: root
+      database__connection__password: example
+      database__connection__database: ghost
+
+  db:
+    container_name: db
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=example
+      
