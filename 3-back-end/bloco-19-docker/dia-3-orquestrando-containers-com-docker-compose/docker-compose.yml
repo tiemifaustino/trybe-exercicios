@@ -5,6 +5,7 @@ services:
   ghost:
     container_name: container-da-tiemi
     image: ghost:1-alpine
+    restart: always
     ports:
       - 2368:2368
     depends_on:
@@ -15,10 +16,23 @@ services:
       database__connection__user: root
       database__connection__password: example
       database__connection__database: ghost
+    networks:
+      - my-network
 
   db:
     container_name: db
     image: mysql:5.7
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=example
-      
+      # - MYSQL_ROOT_PASSWORD=password #sintaxe em string
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - my-network
+
+volumes:
+  db_data:
+
+networks:
+  my-network:
