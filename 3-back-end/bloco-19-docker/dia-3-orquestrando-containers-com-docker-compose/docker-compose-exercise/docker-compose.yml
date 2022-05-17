@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  frontend:
+    build: . # Caminho de onde está o arquivo Dockerfile
+    ports:
+      - 8080:80
+
+# Modificar algo no código do app
+# -> para atualizar no navegador, precisamos parar a execução e executar o comando abaixo novamente:
+# docker-compose up --build -d
