@@ -1,14 +1,27 @@
-const weightKG = 75;
-const heightInMeters = 1.65;
+// const weightKG = 75;
+// const heightInMeters = 1.65;
 
 function calcBMI(weight, height) {
+  console.log(`Peso: ${weight}, Altura: ${height}`);
   
   const bmi = weight / (height ** 2);
   
-  console.log(`Peso: ${weight}, Altura: ${height}`);
   console.log(`IMC: ${bmi.toFixed(2)}`);
 }
 
-calcBMI(weightKG, heightInMeters);
+// calcBMI(weightKG, heightInMeters);
 
-// Executar o script utilizando -> node imc.js 
+module.exports = calcBMI;
+
+// 1 - Executar o script utilizando -> node imc.js 
+
+/*
+no package.json :
+
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node index.js", ---> 2 - Executa com -> npm run imc
+  "imc": "node imc.js"
+},
+
+*/
