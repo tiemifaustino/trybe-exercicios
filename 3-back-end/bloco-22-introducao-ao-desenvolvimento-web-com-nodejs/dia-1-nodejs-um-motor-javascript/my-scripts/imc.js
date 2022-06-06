@@ -2,11 +2,15 @@
 // const heightInMeters = 1.65;
 
 function calcBMI(weight, height) {
-  console.log(`Peso: ${weight}, Altura: ${height}`);
+  console.log(`Peso: ${weight} kg, Altura: ${height} cm`);
   
-  const bmi = weight / (height ** 2);
+  const heightInMeters = height / 100;
+
+  const bmi = weight / (heightInMeters ** 2);
   
-  console.log(`IMC: ${bmi.toFixed(2)}`);
+  // console.log(`IMC: ${bmi.toFixed(2)}`);
+
+  return bmi;
 }
 
 // calcBMI(weightKG, heightInMeters);
