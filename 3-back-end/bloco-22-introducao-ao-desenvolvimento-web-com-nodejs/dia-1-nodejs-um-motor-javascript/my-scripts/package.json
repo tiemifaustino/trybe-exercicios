@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "imc": "node imc.js"
+    "imc": "node imc.js",
+    "velocidade": "node velocidade.js"
   },
   "author": "tiemi_faustino",
   "license": "ISC",
