@@ -26,4 +26,4 @@ switch (true) {
 }
 
 
-// 3 - Executar com npm start
+// 3 - Executar com -> npm start
