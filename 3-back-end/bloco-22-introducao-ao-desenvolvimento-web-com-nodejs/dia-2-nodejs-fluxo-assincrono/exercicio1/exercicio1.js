@@ -26,7 +26,7 @@ function exercicioPromise(par1, par2, par3) {
 //   .then((result) => console.log(result))
 //   .catch((err) => console.log(`Erro: ${err.message}`));
 
-
+// Exercício 2
 function getNumbers() {
   const par1 =  Math.floor(Math.random() * 100 + 1);
   const par2 =  Math.floor(Math.random() * 100 + 1);
