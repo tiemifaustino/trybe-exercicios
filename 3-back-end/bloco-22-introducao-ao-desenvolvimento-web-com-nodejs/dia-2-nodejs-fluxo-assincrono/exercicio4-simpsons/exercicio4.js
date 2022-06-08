@@ -43,3 +43,21 @@ async function main() {
 }
 
 main();
+
+// 4.3 Crie uma função que altere o arquivo simpsons.json retirando os personagens com id 10 e 6.
+
+async function filterSimpsons() {
+  const result = await fs.readFile(myFile, 'utf8');
+  const arraySimpsons = JSON.parse(result);
+
+  const filteredSimpsons = arraySimpsons.filter((simpson) => simpson.id !== '10' && simpson.id !== '6');
+
+  await fs.writeFile(myFile, JSON.stringify(filteredSimpsons));
+  console.log('Retirado personagens com id 10 e 6');
+}
+
+async function main2() {
+  await filterSimpsons();
+}
+
+main2();
