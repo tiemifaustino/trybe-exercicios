@@ -53,11 +53,30 @@ async function filterSimpsons() {
   const filteredSimpsons = arraySimpsons.filter((simpson) => simpson.id !== '10' && simpson.id !== '6');
 
   await fs.writeFile(myFile, JSON.stringify(filteredSimpsons));
-  console.log('Retirado personagens com id 10 e 6');
 }
 
 async function main2() {
   await filterSimpsons();
+  console.log('Retirado personagens com id 10 e 6');
 }
 
 main2();
+
+// 4.4 Crie uma função que leia o arquivo simpsons.json e crie um novo arquivo, chamado simpsonFamily.json, contendo as personagens com id de 1 a 4.
+
+async function newSimpsonsFamily() {
+  const result = await fs.readFile(myFile, 'utf8');
+  const arraySimpsons = JSON.parse(result);
+
+  const memberIds = [1, 2, 3, 4]
+  const newFamily = arraySimpsons.filter((simpson) => memberIds.includes(Number(simpson.id))); // aqui convertemos o ID pra número, já que ele está salvo no JSON como string
+
+  await fs.writeFile('./simpsonFamily.json', JSON.stringify(newFamily), { flag: 'wx'});
+}
+
+async function main3() {
+  await newSimpsonsFamily();
+  console.log('Criado novo arquivo');
+}
+
+main3();
