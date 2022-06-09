@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 
-const numerosNaturais = require('./numeros');
+const numerosNaturais = require('../numeros');
 
 describe('Executa a função numerosNaturais', () => {
   describe('quando o número for maior que 0', () => {
