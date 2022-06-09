@@ -4,7 +4,8 @@ function numerosNaturais(num) {
       return 'positivo';
     case (num < 0):
       return 'negativo';
-
+    case (isNaN(num)):
+      return 'o valor deve ser um número';
     default:
       return 'neutro';
   }

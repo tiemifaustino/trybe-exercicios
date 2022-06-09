@@ -44,4 +44,19 @@ describe('Executa a função numerosNaturais', () => {
       expect(resposta).to.be.equals('neutro');
     });
   });
+
+  describe('quando parâmetro não for número', () => {
+    it('a resposta é uma string', () =>{
+      const resposta = numerosNaturais("I'm not a number");
+
+      expect(resposta).to.be.a('string');
+    });
+
+    it('a resposta retorna mensagem', () =>{
+      const resposta = numerosNaturais("I'm not a number");
+
+      expect(resposta).to.be.equals('o valor deve ser um número');
+    });
+  });
+
 });
