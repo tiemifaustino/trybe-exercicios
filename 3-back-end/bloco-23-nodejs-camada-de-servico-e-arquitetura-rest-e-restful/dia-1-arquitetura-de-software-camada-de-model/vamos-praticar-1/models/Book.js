@@ -28,5 +28,5 @@ const getByAuthorId = async (authorId) => {
 
 module.exports ={
   getAll,
-  getByAuthorId
+  getByAuthorId,
 };

@@ -36,6 +36,23 @@ const getAll = async () => {
 // O primeiro index é onde está a resposta que desejamos (no caso o Authors) e no segundo vêm algumas informações extras sobre a query que não iremos utilizar. ("buffers")
 // desestruturando desta forma: [authors] -> pegamos apenas o primeiro elemento do array que é o array de autores
 
+const findById = async (id) => {
+  const [authorData] = await connection.execute(
+    'SELECT id, first_name, middle_name, last_name FROM authors WHERE id=?;',
+    [id]
+  );
+
+  if (authorData.length === 0) return null;
+  
+  // retorna o 1º elemento do array
+  // como o id é uma primary key, só terá um elemento nesse array, porém para acessar, colocar a posição [0]
+  const { firstName, middleName, lastName } = authorData.map(serialize)[0];
+
+  return getNewAuthor({ id, firstName, middleName, lastName });
+}
+
+
 module.exports ={
   getAll,
+  findById,
 };
