@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js"
   },
@@ -16,6 +17,8 @@
     "mysql2": "^2.3.3"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.0",
     "nodemon": "^2.0.16"
   }
 }

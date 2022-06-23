@@ -29,7 +29,6 @@ const getAll = async () => {
   const [authors] = await connection.execute(
     'SELECT id, first_name, middle_name, last_name FROM authors'
   );
-
   return authors.map(serialize).map(getNewAuthor);
 }
 //  Esse método retorna uma Promise que, quando resolvida, nos fornece um array com 2 campos: [rows, fields]
@@ -39,9 +38,9 @@ const getAll = async () => {
 const findById = async (id) => {
   const [authorData] = await connection.execute(
     'SELECT id, first_name, middle_name, last_name FROM authors WHERE id=?;',
-    [id]
+    [id] // bind para evitar ataque "sql injection"
+    // por interpolação ${id} a aplicação fica vulnerável, é possível "dropar" colocando depois do id "3; DROP DATABASE"
   );
-
   if (authorData.length === 0) return null;
   
   // retorna o 1º elemento do array
@@ -51,8 +50,21 @@ const findById = async (id) => {
   return getNewAuthor({ id, firstName, middleName, lastName });
 }
 
+const isValid = (firstName, middleName, lastName) => {
+  if (!firstName || typeof firstName !== 'string') return false;
+  if (!lastName || typeof lastName !== 'string') return false;
+  if (middleName && typeof middleName !== 'string') return false;
+  return true;
+};
+
+const create = async (firstName, middleName, lastName) => connection.execute(
+    'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?,?,?)',
+    [firstName, middleName, lastName],
+);
 
 module.exports ={
   getAll,
   findById,
+  isValid,
+  create,
 };
