@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: node-mysql-container
+    image: mysql:5.7
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3307:3306'
+    volumes:
+      - /home/tiemi/back-end/datasql2:/var/lib/mysql
