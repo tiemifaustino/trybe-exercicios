@@ -1,5 +1,6 @@
 const connection = require('./connection');
 
+// converte o snake_case em camelCase
 const serialize = (bookData) => {
   return {
     id: bookData.id,
@@ -26,7 +27,19 @@ const getByAuthorId = async (authorId) => {
   return books.map(serialize)
 }
 
+const findById = async (id) => {
+  const [bookData] = await connection.execute(
+    'SELECT id, title, author_id FROM model_example.books WHERE id=?;',
+    [id]
+  );
+  if (bookData.length === 0) return null;
+
+  return bookData.map(serialize)[0];
+}
+
+
 module.exports ={
   getAll,
   getByAuthorId,
+  findById,
 };
