@@ -1,5 +1,7 @@
 const connection = require('./connection');
 
+const Author = require('./Author');
+
 // converte o snake_case em camelCase
 const serialize = (bookData) => {
   return {
@@ -37,9 +39,23 @@ const findById = async (id) => {
   return bookData.map(serialize)[0];
 }
 
+const create = async (title, authorId) => connection.execute(
+  'INSERT INTO books (title, author_id) VALUES (?,?)',
+  [title, authorId],
+);
+
+const isValid = async (title, authorId) => {
+  const isAuthorValid = await Author.findById(authorId); 
+  if (!title || typeof title !== 'string' || title.length < 3) return false;
+  if (!authorId || typeof authorId !== 'number' || !isAuthorValid) return false;
+
+  return true;
+};
 
 module.exports ={
   getAll,
   getByAuthorId,
   findById,
+  isValid,
+  create,
 };
