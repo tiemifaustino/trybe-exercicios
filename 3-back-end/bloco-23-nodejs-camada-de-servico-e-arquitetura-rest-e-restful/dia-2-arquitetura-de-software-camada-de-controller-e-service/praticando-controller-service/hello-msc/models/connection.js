@@ -9,3 +9,9 @@ const connection = mysql.createPool({
   });
 
 module.exports = connection;
+
+  // index.js
+  //  -> controllers/authors
+  //    -> services/authors
+  //      -> models/author
+  //        -> models/connection
