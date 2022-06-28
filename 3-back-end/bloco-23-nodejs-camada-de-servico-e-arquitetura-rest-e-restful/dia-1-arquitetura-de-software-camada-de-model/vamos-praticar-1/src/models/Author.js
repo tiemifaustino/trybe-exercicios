@@ -32,10 +32,11 @@ const getAll = async () => {
   return authors.map(serialize).map(getNewAuthor);
 }
 //  Esse método retorna uma Promise que, quando resolvida, nos fornece um array com 2 campos: [rows, fields]
-// O primeiro index é onde está a resposta que desejamos (no caso o Authors) e no segundo vêm algumas informações extras sobre a query que não iremos utilizar. ("buffers")
+// O primeiro index é onde está a resposta que desejamos (no caso o Authors) e no segundo vêm algumas informações extras (informações das colunas) sobre a query que não iremos utilizar. ("buffers")
 // desestruturando desta forma: [authors] -> pegamos apenas o primeiro elemento do array que é o array de autores
 
 const findById = async (id) => {
+  // await connection.query() -> similar, porém é o servidor q faz
   const [authorData] = await connection.execute(
     'SELECT id, first_name, middle_name, last_name FROM authors WHERE id=?;',
     [id] // bind para evitar ataque "sql injection"
