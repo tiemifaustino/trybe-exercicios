@@ -1,13 +1,11 @@
+const sinon = require('sinon');
 const { expect } = require('chai');
 
-/*
-  Como ainda não temos a implementação, vamos fixar
-  um objeto simulando os métodos que iremos desenvolver,
-  porém, eles não terão nenhum comportamento
-*/
-const MoviesModel = {
-  create: () => {}
-};
+// Para executar o teste: "npm test" ou
+// especificamente: "NAME=movieModel npm test"
+
+const connection = require('../../src/models/connection');
+const MoviesModel = require('../../src/models/movieModel');
 
 describe('Insere um novo filme no BD', () => {
   const payloadMovie = {
@@ -15,6 +13,17 @@ describe('Insere um novo filme no BD', () => {
     directedBy: 'Jane Dow',
     releaseYear: 1999,
   }
+
+  before(async () => {
+    const execute = [{ insertId: 1 }]; // retorno esperado nesse teste
+
+    sinon.stub(connection, 'execute').resolves(execute);
+  });
+
+  // Restauraremos a função `execute` original após os testes.
+  after(async () => {
+    connection.execute.restore();
+  });
 
   describe('quando é inserido com sucesso', () => {
 
