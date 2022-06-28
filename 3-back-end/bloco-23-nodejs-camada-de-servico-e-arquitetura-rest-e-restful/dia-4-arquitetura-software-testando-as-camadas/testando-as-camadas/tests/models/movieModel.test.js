@@ -16,7 +16,6 @@ describe('Insere um novo filme no BD', () => {
 
   before(async () => {
     const execute = [{ insertId: 1 }]; // retorno esperado nesse teste
-
     sinon.stub(connection, 'execute').resolves(execute);
   });
 
@@ -29,13 +28,11 @@ describe('Insere um novo filme no BD', () => {
 
     it('retorna um objeto', async () => {
       const response = await MoviesModel.create(payloadMovie);
-
       expect(response).to.be.a('object')
     });
 
     it('tal objeto possui o "id" do novo filme inserido', async () => {
       const response = await MoviesModel.create(payloadMovie);
-
       expect(response).to.have.a.property('id')
     });
 
