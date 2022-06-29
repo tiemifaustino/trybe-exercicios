@@ -1,8 +1,8 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
 
-const MoviesService = require('../../src/services/movieService');
-const MoviesController = require('../../src/controllers/movieController');
+const MoviesService = require('../../services/movieService');
+const MoviesController = require('../../controllers/movieController');
 
 describe('Ao chamar o controller de create', () => {
   describe('quando o payload informado não é válido', () => {

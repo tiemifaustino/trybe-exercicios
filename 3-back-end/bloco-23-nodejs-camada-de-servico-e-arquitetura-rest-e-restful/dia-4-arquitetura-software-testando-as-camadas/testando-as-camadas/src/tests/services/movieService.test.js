@@ -1,8 +1,8 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
 
-const MoviesModel = require('../../src/models/movieModel');
-const MoviesService = require('../../src/services/movieService');
+const MoviesModel = require('../../models/movieModel');
+const MoviesService = require('../../services/movieService');
 
 /*
   Como ainda não temos a implementação, vamos fixar

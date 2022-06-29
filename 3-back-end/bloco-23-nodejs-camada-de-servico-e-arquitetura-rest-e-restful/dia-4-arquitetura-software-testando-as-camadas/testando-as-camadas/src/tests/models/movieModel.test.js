@@ -4,8 +4,8 @@ const { expect } = require('chai');
 // Para executar o teste: "npm test" ou
 // especificamente: "NAME=movieModel npm test"
 
-const connection = require('../../src/models/connection');
-const MoviesModel = require('../../src/models/movieModel');
+const connection = require('../../models/connection');
+const MoviesModel = require('../../models/movieModel');
 
 describe('Insere um novo filme no BD', () => {
   const payloadMovie = {
