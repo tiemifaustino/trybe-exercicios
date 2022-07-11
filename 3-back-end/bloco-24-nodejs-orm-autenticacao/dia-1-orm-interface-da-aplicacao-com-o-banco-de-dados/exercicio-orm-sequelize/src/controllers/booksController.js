@@ -20,6 +20,21 @@ const booksController = {
     });
     res.status(201).json(bookCreated);
   },
+
+  update: async (req, res) => {
+    const { id } = req.params;
+    await bookService.getById(id);
+    const { title, author, pageQuantity } = req.body;
+    await bookService.update(
+      id,
+      {
+        title,
+        author,
+        pageQuantity,
+      },
+    );
+    res.status(200).json({ message: 'Book updated!' });
+  },
 };
 
 module.exports = booksController;
