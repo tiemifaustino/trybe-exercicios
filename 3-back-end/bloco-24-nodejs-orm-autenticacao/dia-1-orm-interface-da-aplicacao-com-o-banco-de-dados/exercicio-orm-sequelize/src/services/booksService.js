@@ -17,7 +17,7 @@ const booksService = {
     return book;
   },
 
-  create: async (title, author, pageQuantity) => {
+  create: async ({ title, author, pageQuantity }) => {
     const bookCreated = await db.Book.create({
       title,
       author,
