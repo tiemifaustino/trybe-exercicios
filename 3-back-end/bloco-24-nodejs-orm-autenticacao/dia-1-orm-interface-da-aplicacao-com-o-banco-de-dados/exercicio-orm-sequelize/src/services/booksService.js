@@ -27,7 +27,7 @@ const booksService = {
   },
 
   update: async (id, { title, author, pageQuantity }) => {
-    const bookUpdated = await db.Book.update(
+    const [bookUpdated] = await db.Book.update(
       {
         title,
         author,
@@ -42,6 +42,10 @@ const booksService = {
 
   remove: async (id) => {
     const removed = await db.Book.destroy({ where: { id } });
+    if (!removed) {
+      const error = new Error('Algo deu errado');
+      throw error;
+    }
     return removed;
   },
 };

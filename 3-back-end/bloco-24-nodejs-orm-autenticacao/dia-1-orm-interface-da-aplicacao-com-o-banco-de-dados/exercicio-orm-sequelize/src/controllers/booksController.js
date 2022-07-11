@@ -38,7 +38,6 @@ const booksController = {
 
   remove: async (req, res) => {
     const { id } = req.params;
-    await bookService.getById(id);
     await bookService.remove(id);
     res.status(200).json({ message: 'Book removed' });
   },
