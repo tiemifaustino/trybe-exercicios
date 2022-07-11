@@ -14,6 +14,7 @@ module.exports = {
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DATABASE,
     host: process.env.HOSTNAME,
+    port: process.env.MYSQL_PORT,
     dialect: 'mysql',
   },
   production: {
