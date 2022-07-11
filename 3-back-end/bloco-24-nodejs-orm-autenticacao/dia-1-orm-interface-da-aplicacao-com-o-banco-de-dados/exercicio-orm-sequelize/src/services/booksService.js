@@ -16,6 +16,15 @@ const booksService = {
     }
     return book;
   },
+
+  create: async (title, author, pageQuantity) => {
+    const bookCreated = await db.Book.create({
+      title,
+      author,
+      pageQuantity,
+    });
+    return bookCreated;
+  },
 };
 
 module.exports = booksService;
