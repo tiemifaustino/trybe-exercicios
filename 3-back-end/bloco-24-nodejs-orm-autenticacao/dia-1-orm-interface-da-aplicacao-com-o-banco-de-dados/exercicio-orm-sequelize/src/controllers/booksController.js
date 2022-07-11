@@ -10,6 +10,16 @@ const booksController = {
     const book = await bookService.getById(req.params.id);
     res.status(200).json(book);
   },
+
+  create: async (req, res) => {
+    const { title, author, pageQuantity } = req.body;
+    const bookCreated = await bookService.create({
+      title,
+      author,
+      pageQuantity,
+    });
+    res.status(201).json(bookCreated);
+  },
 };
 
 module.exports = booksController;
