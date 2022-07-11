@@ -6,6 +6,11 @@ const booksService = {
     const books = await db.Book.findAll();
     return books;
   },
+
+  getById: async (id) => {
+    const books = await db.Book.findByPk(id);
+    return books;
+  },
 };
 
 module.exports = booksService;
