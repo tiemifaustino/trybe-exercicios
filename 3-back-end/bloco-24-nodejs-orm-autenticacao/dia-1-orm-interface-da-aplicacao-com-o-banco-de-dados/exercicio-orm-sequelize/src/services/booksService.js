@@ -25,6 +25,20 @@ const booksService = {
     });
     return bookCreated;
   },
+
+  update: async (id, { title, author, pageQuantity }) => {
+    const bookUpdated = await db.Book.update(
+      {
+        title,
+        author,
+        pageQuantity,
+      },
+      {
+        where: { id },
+      },
+    );
+    return bookUpdated;
+  },
 };
 
 module.exports = booksService;
