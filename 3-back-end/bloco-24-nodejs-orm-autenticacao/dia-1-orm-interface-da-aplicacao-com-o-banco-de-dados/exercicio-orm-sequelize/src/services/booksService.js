@@ -27,7 +27,7 @@ const booksService = {
   },
 
   update: async (id, { title, author, pageQuantity }) => {
-    const bookUpdated = await db.Book.update(
+    const [bookUpdated] = await db.Book.update(
       {
         title,
         author,

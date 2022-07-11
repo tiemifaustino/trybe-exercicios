@@ -1,4 +1,5 @@
 const express = require('express');
+require('express-async-errors');
 const booksRouter = require('./routers/books.routes');
 
 const app = express();
