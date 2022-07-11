@@ -35,6 +35,13 @@ const booksController = {
     );
     res.status(200).json({ message: 'Book updated!' });
   },
+
+  remove: async (req, res) => {
+    const { id } = req.params;
+    await bookService.getById(id);
+    await bookService.remove(id);
+    res.status(200).json({ message: 'Book removed' });
+  },
 };
 
 module.exports = booksController;
