@@ -39,6 +39,11 @@ const booksService = {
     );
     return bookUpdated;
   },
+
+  remove: async (id) => {
+    const removed = await db.Book.destroy({ where: { id } });
+    return removed;
+  },
 };
 
 module.exports = booksService;
