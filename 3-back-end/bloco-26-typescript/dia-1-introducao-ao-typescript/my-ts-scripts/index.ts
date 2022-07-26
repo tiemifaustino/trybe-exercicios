@@ -1,6 +1,11 @@
-type Character = any;
+type Character = {
+  nickname: string,
+  class: string,
+  stats: { agi: number, str: number, int: number, hp: number, mp: number },
+  createdAt: Date,
+};
 
-const characters: any = [
+const characters: Character[] = [
   {
     nickname: 'xKillerx',
     class: 'warrior',
