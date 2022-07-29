@@ -4,7 +4,7 @@ import Book from '../interfaces/book.interface';
 import { NotFoundError } from 'restify-errors';
 
 class BookService {
-  public model: BookModel;
+  public model: BookModel; // cria o atributo
 
   constructor() {
     this.model = new BookModel(connection);
