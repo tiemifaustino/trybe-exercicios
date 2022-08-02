@@ -12,4 +12,15 @@ class Tv {
     this._connections = c
   }
 
+  turnOn():void  {
+    console.log(`Televisão ${this._brand}, ${this._size} polegadas, resolução ${this._resolution}, conexões ${this._connections} `);
+  }
 }
+
+// cria um objeto com a palavra reservada "new"
+const television = new Tv('Samsung', 50, '4k', ['wifi', 'bluetooth']);
+
+// chama o método "turnOn" da classe Tv
+television.turnOn();
+
+// executar com "npm start"
