@@ -58,6 +58,13 @@ class Student {
     const sum = [...this._testGrades, ...this._workGrades];
     return sum.reduce((previousNote, note) => previousNote + note)
   }
+
+  averageGrades(): number {
+    const numberOfGrades = this._testGrades.length + this._workGrades.length;
+    const average = this.sumGrades() / numberOfGrades;
+    return parseFloat(average.toFixed(2));
+    // return Math.round(average);
+  }
 }
 
 const student1 = new Student('Tiemi', 'TypeScript');
@@ -81,3 +88,4 @@ console.log('Sem notas', studentTwo);
 // studentTwo.name = 'Tr'
 
 console.log('Soma de todas as notas', student1.sumGrades());
+console.log('Média de todas as notas', student1.averageGrades());
