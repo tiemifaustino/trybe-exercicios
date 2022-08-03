@@ -58,9 +58,19 @@ class Student {
 const student1 = new Student('Tiemi', 'TypeScript');
 console.log('Sem notas', student1);
 
-student1.testGrades = [4, 5, 7, 9]
+student1.testGrades = [4, 5, 7, 9];
 console.log('Com 4 notas de provas', student1);
 
-student1.testGrades = [4, 5, 7, 10, 9]
-console.log('Com 5 notas de provas', student1);
-console.log('Com 5 notas de provas', student1.testGrades);
+// Lança erro 'The student must have 4 test grades only'
+// student1.testGrades = [4, 5, 7, 10, 9]
+// console.log('Com 5 notas de provas', student1);
+
+student1.workGrades = [10, 8];
+console.log('Com 2 notas de trabalhos', student1);
+
+// Para instanciar uma classe, a validação não é lida (do nome ter pelo menos 3 caracteres)
+const studentTwo = new Student('Tr', 'Back-end');
+console.log('Sem notas', studentTwo);
+
+// Ao utilizar o setter a validação é lida e lança o erro 'The name must have 3 characters at least'
+// studentTwo.name = 'Tr'
