@@ -53,6 +53,11 @@ class Student {
     }
     this._workGrades = value;
   }
+
+  sumGrades(): number {
+    const sum = [...this._testGrades, ...this._workGrades];
+    return sum.reduce((previousNote, note) => previousNote + note)
+  }
 }
 
 const student1 = new Student('Tiemi', 'TypeScript');
@@ -74,3 +79,5 @@ console.log('Sem notas', studentTwo);
 
 // Ao utilizar o setter a validação é lida e lança o erro 'The name must have 3 characters at least'
 // studentTwo.name = 'Tr'
+
+console.log('Soma de todas as notas', student1.sumGrades());
