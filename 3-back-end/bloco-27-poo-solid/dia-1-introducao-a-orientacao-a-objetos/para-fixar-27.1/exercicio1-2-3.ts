@@ -15,7 +15,28 @@ class Tv {
   turnOn():void  {
     console.log(`Televisão ${this._brand}, ${this._size} polegadas, resolução ${this._resolution}, conexões ${this._connections} `);
   }
+
+  /*
+    O setter deverá verificar se o valor definido está entre as conexões disponíveis (_connections) e:
+    Em caso positivo, definir este valor para o atributo _connectedTo;
+    Em caso negativo, imprimir no console a mensagem "Sorry, connection unavailable!"
+  */
+  get connectedTo(): string | undefined {
+    return this._connectedTo;
+  }
+
+  set connectedTo(newConnection: string | undefined) {
+    // O condicional permite setar undefined ou uma conexão que esteja no `connections`
+    if (!newConnection || this._connections.includes(newConnection)) {
+      this._connectedTo = newConnection
+      console.log(this._connectedTo);
+      
+    }
+    console.log("Sorry, connection unavailable!");
+  }
 }
+
+
 
 // cria um objeto com a palavra reservada "new"
 const television = new Tv('Samsung', 50, '4k', ['wifi', 'bluetooth']);
