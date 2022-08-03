@@ -6,11 +6,11 @@ class Student {
   private _testGrades: number[];
   private _workGrades: number [];
 
-  constructor(n: string, e: string, t: number[], w: number[]) {
+  constructor(n: string, e: string) {
     this._name = n;
     this._enrollment = e;
-    this._testGrades = t;
-    this._workGrades = w;
+    this._testGrades = [];
+    this._workGrades = [];
   }
 
   get name(): string {
@@ -19,7 +19,7 @@ class Student {
   
   set name(value: string) {
     if (value.length < 3) {
-      console.log('The name must have 3 characters at least');
+      throw new Error('The name must have 3 characters at least');
     }
     this._name = value;
   }
@@ -38,7 +38,7 @@ class Student {
 
   set testGrades(value: number[]) {
     if (value.length > 4) {
-      console.log('The student must have 4 test grades only');
+      throw new Error('The student must have 4 test grades only');
     }
     this._testGrades = value;
   }
@@ -49,8 +49,18 @@ class Student {
 
   set workGrades(value: number[]) {
     if (value.length > 2) {
-      console.log('The student must have 2 work grades only');
+      throw new Error('The student must have 2 work grades only');
     }
     this._workGrades = value;
   }
 }
+
+const student1 = new Student('Tiemi', 'TypeScript');
+console.log('Sem notas', student1);
+
+student1.testGrades = [4, 5, 7, 9]
+console.log('Com 4 notas de provas', student1);
+
+student1.testGrades = [4, 5, 7, 10, 9]
+console.log('Com 5 notas de provas', student1);
+console.log('Com 5 notas de provas', student1.testGrades);

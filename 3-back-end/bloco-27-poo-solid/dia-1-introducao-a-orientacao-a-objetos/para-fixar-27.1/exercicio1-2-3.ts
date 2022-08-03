@@ -9,7 +9,7 @@ class Tv {
     this._brand = b;
     this._size = s;
     this._resolution = r;
-    this._connections = c
+    this._connections = c;
   }
 
   turnOn():void  {
