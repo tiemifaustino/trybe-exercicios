@@ -1,7 +1,12 @@
 export default class Person {
   constructor(private _name: string, private _birthDate: Date) {
+<<<<<<< HEAD
     this.name = _name; // this.name sem underscore para acessar o setter
     this.birthDate = _birthDate; // o setter terá o valor do atributo _birthDate e o de cima atributo _name
+=======
+    this._name = _name;
+    this._birthDate = _birthDate;
+>>>>>>> c0e17246b8217fdc9c1943ec78a6ff050383497c
   }
 
   // GETTERS | SETTERS
@@ -46,9 +51,9 @@ export default class Person {
   }
 }
 
-const person1 = new Person('Tiemi', new Date(1990, 3, 26));
+/* const person1 = new Person('Tiemi', new Date(1990, 3, 26));
 console.log(person1);
-console.log(person1.birthDate); // getter
+console.log(person1.birthDate); // getter */
 // new Date() -> retorna data atual (hoje)
 // getTime() -> retorna Um número representando os milissegundos passados entre 1 de Janeiro de 1970 00:00:00 UTC e a data atual
 // Date.now() -> retorna o número de milissegundos decorridos desde 1 de janeiro de 1970 00:00:00 UTC.
@@ -59,8 +64,13 @@ console.log(person1.birthDate); // getter
 // data em milissegundos - data de nascimento convertida em milissegundos = diferença em milissegundos (decorridos da data de 01/01/1970)
 // console.log(Math.abs(Date.now() - new Date(1990, 3, 26).getTime()));
 
+<<<<<<< HEAD
 const person2 = new Person('Da', new Date('2023/04/10'));
 console.log(person2);
+=======
+/* const person2 = new Person('Da', new Date('2023/04/10'));
+console.log(person2); */
+>>>>>>> c0e17246b8217fdc9c1943ec78a6ff050383497c
 
 // erro 'birthDate must not be a date in the future'
 // console.log(person2.birthDate = new Date('2023/04/10')); // setter
