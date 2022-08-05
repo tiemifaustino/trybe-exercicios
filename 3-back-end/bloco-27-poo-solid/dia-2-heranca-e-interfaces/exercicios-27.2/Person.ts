@@ -74,3 +74,5 @@ console.log(person1.birthDate); // getter
 // Error: Person must be until 120 years
 // const person3 = new Person('Danilo', new Date('1901/04/10'));
 // console.log(person3);
+
+//
