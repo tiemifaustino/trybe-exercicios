@@ -1,7 +1,7 @@
-class Person {
-  constructor(public _name: string, private _birthDate: Date) {
-    this._name = _name;
-    this._birthDate = _birthDate;
+export default class Person {
+  constructor(private _name: string, private _birthDate: Date) {
+    this.name = _name; // this.name sem underscore para acessar o setter
+    this.birthDate = _birthDate; // o setter terá o valor do atributo _birthDate e o de cima atributo _name
   }
 
   // GETTERS | SETTERS
@@ -23,18 +23,26 @@ class Person {
     this._birthDate = value;
   }
 
+  // MÉTODO ESTÁTICO - é relacionado com a classe como um todo
+  static getAge(value: Date) {
+    const diffTimeMs = Math.abs(Date.now() - new Date(value).getTime());
+    const oneYearInMs = 31536000000;
+    return Math.floor(diffTimeMs / oneYearInMs);
+  }
+
   // VALIDATIONS 
   // - O nome deve ter no mínimo três caracteres
   private validateName(value: string): void {
     if (value.length < 3) {
-      throw new Error('The name must have 3 characters at least');
+      throw new Error('name must have 3 characters at least');
     }
   }
 
   // - A data de nascimento não pode ser uma data no futuro
   //  - A pessoa não pode possuir mais de 120 anos
   private validateBirhDate(value: Date): void {
-    if (value.getTime() > new Date().getTime()) throw new Error('The birthDate must not be a date in the future');
+    if (value.getTime() > new Date().getTime()) throw new Error('birthDate must not be a date in the future');
+    if (Person.getAge(value) > 120) throw new Error('Person must be until 120 years')
   }
 }
 
@@ -51,9 +59,14 @@ console.log(person1.birthDate); // getter
 // data em milissegundos - data de nascimento convertida em milissegundos = diferença em milissegundos (decorridos da data de 01/01/1970)
 // console.log(Math.abs(Date.now() - new Date(1990, 3, 26).getTime()));
 
-const person2 = new Person('Danilo', new Date('2023/04/10'))
-// erro 'The birthDate must not be a date in the future'
+const person2 = new Person('Da', new Date('2023/04/10'));
+console.log(person2);
+
+// erro 'birthDate must not be a date in the future'
 // console.log(person2.birthDate = new Date('2023/04/10')); // setter
+
+// erro 'name must have 3 characters at least'
+// console.log(person2.name = 'Da');
 
 
 
