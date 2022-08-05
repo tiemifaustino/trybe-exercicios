@@ -9,34 +9,42 @@ type Student = {
   disciplines: Discipline[];
 };
 
-function setApproved(students: Array<Student>) {
-  const studentsWithLetterGrade = students.map((student) => {
-    const disciplinesWithLetterGrade = student.disciplines.map((discipline) => {
-      if (discipline.grade >= 0.9) discipline.letterGrade = 'A';
-      else if (discipline.grade >= 0.8) discipline.letterGrade = 'B';
-      else if (discipline.grade >= 0.7) discipline.letterGrade = 'C';
-      else if (discipline.grade >= 0.6) discipline.letterGrade = 'D';
-      else if (discipline.grade >= 0.1) discipline.letterGrade = 'E';
-      else discipline.letterGrade = 'F';
+/* "Converter" */
+const percentageGradesIntoLetters = ({ name: studentName, disciplines }: Student):
+  { name: string, disciplines: Discipline[]} => ({
+  name: studentName,
+  disciplines: disciplines.map(({ name, grade }) => {
+    let letterGrade;
 
-      return discipline;
-    });
+    if (grade >= 0.9) letterGrade = 'A';
+    else if (grade >= 0.8) letterGrade = 'B';
+    else if (grade >= 0.7) letterGrade = 'C';
+    else if (grade >= 0.6) letterGrade = 'D';
+    else if (grade >= 0.1) letterGrade = 'E';
+    else letterGrade = 'F';
 
-    return {
-      name: student.name,
-      disciplines: disciplinesWithLetterGrade,
-    };
-  });
+    return { name, grade, letterGrade };
+  }) });
 
-  const approvedStudents = studentsWithLetterGrade.filter(({ disciplines }) =>
-    disciplines.every((discipline) => discipline.grade > 0.7));
+/* "Determinar" */
+const approvedStudents = ({ disciplines }: Student): boolean =>
+  disciplines.every(
+    ({ grade }) => grade > 0.7,
+  );
 
-  /* Finja que o console.log é algo que atualiza uma base de dados */
-  approvedStudents.map(({ name, disciplines }) => {
-    console.log(`A pessoa com nome ${name} foi aprovada!`);
-    disciplines.map(({ name, letterGrade }) =>
-      console.log(`${name}: ${letterGrade}`));
-  });
+/* "Atualizar" */
+const updateApprovalData = ({ name: studentName, disciplines }: Student): void => {
+  console.log(`A pessoa com nome ${studentName} foi aprovada!`);
+
+  disciplines.map(({ name, letterGrade }) =>
+    console.log(`${name}: ${letterGrade}`));
+};
+
+function setApproved(students: Student[]): void {
+  students
+    .map(percentageGradesIntoLetters)
+    .filter(approvedStudents)
+    .map(updateApprovalData);
 }
 
 /* Abaixo temos um exemplo de execução */
