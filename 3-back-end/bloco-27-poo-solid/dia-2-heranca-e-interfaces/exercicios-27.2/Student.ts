@@ -1,16 +1,16 @@
 // Exercício 1: Vamos modelar algumas partes de um software de uma escola. Escreva uma classe cujos objetos representarão pessoas estudantes matriculadas em uma disciplina. Cada objeto dessa classe deve conter os seguintes dados: matrícula, nome, 4 notas de prova, 2 notas de trabalho.
 
 class Student {
-  private _name: string;
+  private _name: string = ''; // atribui um valor inicial
   private _enrollment: string;
-  private _testGrades: number[];
-  private _workGrades: number [];
+  private _testGrades: number [] = Array();
+  private _workGrades: number [] = Array();
 
-  constructor(n: string, e: string) {
-    this._name = n;
+  constructor(n: string, e: string, t: number[], w: number[]) { 
+    this.name = n; // retira o underscore para poder acessar o setter // Ao utilizar o setter a validação é lida 
     this._enrollment = e;
-    this._testGrades = [];
-    this._workGrades = [];
+    this.testGrades = t;
+    this.workGrades = w;
   }
 
   get name(): string {
@@ -25,7 +25,7 @@ class Student {
   }
 
   get enrollment(): string {
-    return this._enrollment;
+    return this._enrollment as string;
   }
 
   set enrollment(value: string) {
@@ -37,8 +37,8 @@ class Student {
   }
 
   set testGrades(value: number[]) {
-    if (value.length > 4) {
-      throw new Error('The student must have 4 test grades only');
+    if (value.length !== 4) {
+      throw new Error('The student must have 4 test grades');
     }
     this._testGrades = value;
   }
@@ -48,8 +48,8 @@ class Student {
   }
 
   set workGrades(value: number[]) {
-    if (value.length > 2) {
-      throw new Error('The student must have 2 work grades only');
+    if (value.length !== 2) {
+      throw new Error('The student must have 2 work grades');
     }
     this._workGrades = value;
   }
@@ -67,25 +67,23 @@ class Student {
   }
 }
 
-const student1 = new Student('Tiemi', 'TypeScript');
-console.log('Sem notas', student1);
+// throw new Error('The name must have 3 characters at least'):
+// const studentTest = new Student('La', 'JS', [1,2,3,4], [10,10])
 
-student1.testGrades = [4, 5, 7, 9];
-console.log('Com 4 notas de provas', student1);
+const student1 = new Student('Tiemi', 'TypeScript', [4, 5, 7, 9], [10, 8]);
+console.log(student1);
 
-// Lança erro 'The student must have 4 test grades only'
+// Error: The student must have 4 test grades
 // student1.testGrades = [4, 5, 7, 10, 9]
 // console.log('Com 5 notas de provas', student1);
 
-student1.workGrades = [10, 8];
-console.log('Com 2 notas de trabalhos', student1);
+// Error: The student must have 4 test grades
+// const studentTwo = new Student('Tryber', 'Back-end', [4, 5, 7, 9, 10], [10, 8] );
+// console.log(studentTwo);
 
-// Para instanciar uma classe, a validação não é lida (do nome ter pelo menos 3 caracteres)
-const studentTwo = new Student('Tr', 'Back-end');
-console.log('Sem notas', studentTwo);
+// Error: The student must have 2 work grades
+// const studentThree = new Student('Tryber', 'Back-end', [4, 5, 7, 9], [8] );
 
-// Ao utilizar o setter a validação é lida e lança o erro 'The name must have 3 characters at least'
-// studentTwo.name = 'Tr'
 
 console.log('Soma de todas as notas', student1.sumGrades());
 console.log('Média de todas as notas', student1.averageGrades());
