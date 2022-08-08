@@ -14,7 +14,7 @@ export default class Musician {
   // Agora a flauta é recebida como parâmetro
   constructor(
     public name: string,
-    public flute: Flute,
+    public flute: Flute = new Flute('Minha flauta'), // Agora o parâmetro da flauta tem um valor padrão caso nenhuma seja passada
   ) { }
 
   play(): void {
@@ -25,6 +25,17 @@ export default class Musician {
   }
 }
 
-const flute = new Flute('Minha flauta');
-const musician = new Musician('Márcia', flute);
+// SEM VALOR PADRÃO: "public flute: Flute"
+// const flute = new Flute('Minha flauta');
+// const musician = new Musician('Márcia', flute);
+// musician.play();
+
+// Minha flauta está emitindo melodias
+// "Márcia" é quem está comandando a emissão das melodias
+
+// COM VALOR PADRÃO: "public flute: Flute = new Flute('Minha flauta')"
+const musician = new Musician('Márcia');
 musician.play();
+
+// Minha flauta está emitindo melodias
+// "Márcia" é quem está comandando a emissão das melodias
