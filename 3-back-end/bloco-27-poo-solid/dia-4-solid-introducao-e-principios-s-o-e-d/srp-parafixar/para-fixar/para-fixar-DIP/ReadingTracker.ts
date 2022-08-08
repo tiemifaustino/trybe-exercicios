@@ -6,9 +6,10 @@ import { Notificator } from './Notificator';
 export default class ReadingTracker {
   private readingGoal: number;
   private booksRead: number;
-  notificator: Notificator;
+  public notificator: Notificator;
+  
   constructor(readingGoal: number, email: string) {
-    this.notificator: new EmailNotification(email);
+    this.notificator = new EmailNotification(email);
     this.readingGoal = readingGoal;
     this.booksRead = 0;
   }
