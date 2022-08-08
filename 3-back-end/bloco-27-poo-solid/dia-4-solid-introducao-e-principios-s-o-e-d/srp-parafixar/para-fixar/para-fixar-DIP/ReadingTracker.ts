@@ -1,15 +1,19 @@
 // ReadingTracker.ts
+// Como a alteração será feita apenas no construtor da classe `ReadingTracker`, o restante do código permanece inalterado.
 
-import EmailNotification from './EmailNotification';
+import ConsoleNotification from './ConsoleNotification';
 import { Notificator } from './Notificator';
 
 export default class ReadingTracker {
   private readingGoal: number;
   private booksRead: number;
-  public notificator: Notificator;
-  
-  constructor(readingGoal: number, email: string) {
-    this.notificator = new EmailNotification(email);
+  // O construtor deixa de instanciar um novo objeto do tipo Notificator
+  // e agora passa a receber ele como parâmetro
+
+  constructor(
+    readingGoal: number,
+    public notificator: Notificator = new ConsoleNotification('console'),
+  ) {
     this.readingGoal = readingGoal;
     this.booksRead = 0;
   }
