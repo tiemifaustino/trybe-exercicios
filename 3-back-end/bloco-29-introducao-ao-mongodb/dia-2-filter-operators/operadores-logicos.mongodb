@@ -12,3 +12,12 @@ db.restaurants.countDocuments({
     { borough: 'Brooklyn' },
   ]
 });
+
+// 3-Selecione e faça a contagem dos restaurantes localizados nos bairros Queens, Staten Island e Brooklyn e possuem avaliação maior que 4.
+use('business');
+db.restaurants.countDocuments({
+  $and: [
+    { rating: { $gt: 4 } },
+    { borough: { $in: ['Queens', 'Staten Island', 'Brooklyn']} },
+  ]
+});
