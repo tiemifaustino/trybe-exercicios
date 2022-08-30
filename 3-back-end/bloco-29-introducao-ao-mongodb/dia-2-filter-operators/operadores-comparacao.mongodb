@@ -12,3 +12,9 @@ use('business');
 db.restaurants.countDocuments({
   cuisine: { $ne: 'American' }
 });
+
+// 3-Selecione e faça a contagem dos restaurantes que possuem avaliação maior ou igual a 8. (utilizando o atributo rating)
+use('business');
+db.restaurants.countDocuments({
+  rating: { $gte: 8 }
+});
