@@ -6,3 +6,9 @@ use('business');
 db.restaurants.countDocuments({ 
   borough: { $in: ["Queens", "Staten", "Island", "Bronx"] } 
 });
+
+// 2-Selecione e faça a contagem dos restaurantes que não possuem culinária do tipo American. (utilizando o atributo cuisine)
+use('business');
+db.restaurants.countDocuments({
+  cuisine: { $ne: 'American' }
+});
