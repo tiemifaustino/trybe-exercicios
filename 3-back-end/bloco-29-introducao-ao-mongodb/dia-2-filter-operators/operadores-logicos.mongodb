@@ -21,3 +21,16 @@ db.restaurants.countDocuments({
     { borough: { $in: ['Queens', 'Staten Island', 'Brooklyn']} },
   ]
 });
+
+// 4-Selecione e faça a contagem dos restaurantes onde nem o campo avaliação seja igual a 1, nem o campo culinária seja do tipo American.
+use('business');
+db.restaurants.countDocuments({
+  $nor: [
+    { rating: { $eq: 1 } },
+    { cuisine: 'American' },
+  ]
+});
+// ou Contêm rating diferente de 1 e contêm cuisine diferente de American
+// ou Contêm rating diferente de 1 e não contêm cuisine
+// ou Não contêm rating e contêm cuisine diferente de American
+// ou Não contêm rating e e não contêm cuisine
