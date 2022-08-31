@@ -1,3 +1,8 @@
 // Exercício 13: Selecione todos os super-heróis que não sejam humanos nem sejam maiores do que 1.80m
 use('class');
-db.superheroes.countDocuments({ "aspects.height": { $not: { $gt: 180 } } });
+db.superheroes.find({ 
+  $nor: [
+    { "aspects.height": { $gt: 180 } },
+    { race: "Human" },
+  ]
+});
