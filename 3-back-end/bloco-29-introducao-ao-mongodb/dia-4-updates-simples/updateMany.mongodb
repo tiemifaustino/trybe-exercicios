@@ -1,0 +1,11 @@
+use('conteudo_trybe');
+db.inventory.find();
+
+// o método db.colecao.updateMany() é utilizado para alterar todos os documentos da coleção inventory em que o valor do campo qty seja menor do que 50:
+use('conteudo_trybe');
+db.inventory.updateMany(
+  { "qty": { $lt: 50 } },
+  { $set: { "size.uom": "in", status: "P" } }
+);
+
+// ⚠️ Chamando o método db.colecao.updateMany() com o parâmetro de filtro vazio { }, o resultado é a atualização de TODOS os documentos presentes em colecao. ⚠️
