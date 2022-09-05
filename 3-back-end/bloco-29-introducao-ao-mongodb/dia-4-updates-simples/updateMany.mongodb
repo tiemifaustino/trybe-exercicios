@@ -9,3 +9,5 @@ db.inventory.updateMany(
 );
 
 // ⚠️ Chamando o método db.colecao.updateMany() com o parâmetro de filtro vazio { }, o resultado é a atualização de TODOS os documentos presentes em colecao. ⚠️
+
+

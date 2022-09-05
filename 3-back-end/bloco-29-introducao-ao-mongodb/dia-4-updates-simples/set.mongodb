@@ -1,0 +1,52 @@
+use('conteudo_trybe');
+db.products.find();
+
+// inserindo novo banco
+use('conteudo_trybe');
+db.products.insertOne({
+  _id: 100,
+  sku: "abc123",
+  quantity: 250,
+  instock: true,
+  reorder: false,
+  details: { model: "14Q2", make: "xyz" },
+  tags: [ "apparel", "clothing" ],
+  ratings: [ { by: "ijk", rating: 4 } ]
+})
+
+// Se o campo não existir, o operador $set adiciona um novo campo com o valor especificado. Se você especificar campos com dot notation, os documentos embedados necessários serão criados para suprir o caminho do campo.
+
+// Exemplo 1: Alterando campos no primeiro nível (top-level)
+// Para o documento que corresponder ao critério de filtro em que o campo _id seja igual a 100, a operação a seguir altera o valor dos campos quantity, details e tags:
+use('conteudo_trybe');
+db.products.updateOne(
+  { _id: 100 },
+  { $set: {
+      quantity: 500,
+      details: { model: "14Q3", make: "xyz" },
+      tags: [ "coats", "outerwear", "clothing" ]
+    }
+  }
+);
+// A operação acima altera o valor de quantity para 500, details para um novo documento embedado e tags para um novo array.
+
+// Exemplo 2: Alterando campos em documentos embedados
+// A operação abaixo altera o valor do campo make dentro do subdocumento details em que o campo _id seja igual a 100:
+use('conteudo_trybe');
+db.products.updateOne(
+  { _id: 100 },
+  { $set: { "details.make": "zzz" } }
+);
+
+// Exemplo 3: Alterando valores em arrays
+// A query abaixo tem como critério de seleção o campo _id igual a 100. Ela altera o segundo elemento (índice 1) do array tags e o campo rating no primeiro elemento (índice 0) do array ratings:
+use('conteudo_trybe');
+db.products.updateOne(
+  { _id: 100 },
+  { $set: {
+      "tags.1": "rain gear",
+      "ratings.0.rating": 2
+    }
+  }
+);
+// Na operação acima, a posição no array está especificada explicitamente.
