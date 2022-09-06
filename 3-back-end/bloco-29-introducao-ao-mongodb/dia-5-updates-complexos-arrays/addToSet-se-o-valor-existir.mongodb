@@ -1,0 +1,24 @@
+// Se o valor existir
+
+// A operação abaixo tenta adicionar o elemento "camera" ao array tags. Porém, esse elemento já existe e a operação não surtirá efeito:
+use('sales');
+db.inventory.updateOne(
+  { _id: 1 },
+  { $addToSet: { tags: "camera"  } },
+);
+// Como resultado dessa operação, é retornada uma mensagem dizendo que o MongoDB encontrou um documento com o _id igual a 1, mas não fez nenhuma alteração
+
+
+// retorna todos os dados da coleção inventory
+use('sales');
+db.inventory.find();
+
+// insere
+use('sales');
+db.inventory.insertOne(
+  {
+    _id: 1,
+    item: "polarizing_filter",
+    tags: ["electronics", "camera"],
+  }
+);
