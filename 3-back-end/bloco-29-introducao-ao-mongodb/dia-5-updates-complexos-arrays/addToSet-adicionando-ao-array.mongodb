@@ -1,0 +1,22 @@
+// Adicionando ao array
+// A operação abaixo adiciona o elemento "accessories" ao array tags desde que "accessories" não exista no array:
+use('sales');
+db.inventory.updateOne(
+  { _id: 1 },
+  { $addToSet: { tags: "accessories" } },
+);
+
+
+// retorna todos os dados da coleção inventory
+use('sales');
+db.inventory.find();
+
+// insere
+use('sales');
+db.inventory.insertOne(
+  {
+    _id: 1,
+    item: "polarizing_filter",
+    tags: ["electronics", "camera"],
+  }
+);
