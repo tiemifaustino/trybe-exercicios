@@ -1,0 +1,28 @@
+// Adicionando múltiplos valores a um array
+// é necessário adicionar o modificador $each.
+
+
+// A operação abaixo adicionará mais dois produtos ao array items do primeiro documento na coleção supplies:
+use('sales');
+db.supplies.updateOne(
+  {},
+  {
+    $push: {
+      items: {
+        $each: [
+          {
+            "name": "pens",
+            "price": 56.12,
+            "quantity": 5,
+          },
+          {
+            "name": "envelopes",
+            "price": 19.95,
+            "quantity": 8,
+          },
+        ],
+      },
+    },
+  },
+  { upsert: true },
+);
