@@ -1,0 +1,26 @@
+// Com o modificador $each
+
+// O modificador $each permite que você adicione múltiplos valores a um array.
+// A operação abaixo utiliza o operador $addToSet e o modificador $each para adicionar alguns elementos a mais no array tags:
+use('sales');
+db.inventory.updateOne(
+  { _id: 2 },
+  {
+    $addToSet: {
+      tags: {
+        $each: ["camera", "electronics", "accessories"],
+      },
+    },
+  },
+);
+// Como resultado, a operação adicionará ao array tags somente os elementos "camera" e "accessories", uma vez que o elemento "electronics" já existia no array.
+
+// retorna todos os dados da coleção inventory
+use('sales');
+db.inventory.find();
+
+// insere
+use('sales');
+db.inventory.insertOne(
+  { _id: 2, item: "cable", tags: ["electronics", "supplies"] }
+);
