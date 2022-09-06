@@ -1,0 +1,35 @@
+// Removendo itens em um array de Documentos
+
+// Com a operação abaixo, você consegue remover do array results todos os elementos que contenham o campo score igual a 8 e o campo item igual a "B".
+// Ou seja, o documento deve atender a ambas as condições. 
+use('sales');
+db.survey.updateMany(
+  {},
+  {
+    $pull: {
+      results: { score: 8 , item: "B" },
+    },
+  },
+);
+// A expressão do operador $pull aplica as condições a cada elemento do array results como se estivesse no primeiro nível
+
+
+
+// insere o documento
+use('sales');
+db.survey.insertMany([
+  {
+    _id: 1,
+    results: [ // Os documentos têm um array chamado results que armazena documentos.
+      { item: "A", score: 5 },
+      { item: "B", score: 8, comment: "Strongly agree" },
+    ],
+  },
+  {
+    _id: 2,
+    results: [
+      { item: "C", score: 8, comment: "Strongly agree" },
+      { item: "B", score: 4 },
+    ],
+  }
+]);
