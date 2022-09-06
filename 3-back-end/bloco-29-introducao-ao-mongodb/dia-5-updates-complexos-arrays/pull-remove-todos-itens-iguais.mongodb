@@ -1,0 +1,72 @@
+// Removendo todos os itens iguais a um valor especificado
+// Digamos que você queira remover do array items os elementos pens e envelopes:
+use('sales');
+db.supplies.updateMany(
+  {},
+  {
+    $pull: {
+      items: {
+        name: { $in: ["pens", "envelopes"] },
+      },
+    },
+  },
+);
+// Na atualização acima, foi utilizado o operador $pull combinado com o operador $in para alterar o array items
+
+// retorna todos os dados da coleção supplies
+use('sales');
+db.supplies.find();
+
+// remove o banco
+use('sales');
+db.supplies.drop();
+
+// insere o documento
+use('sales');
+db.supplies.insertMany([
+  {
+    _id: 1,
+    items: [
+      {
+        "name" : "notepad",
+        "price" : 35.29,
+        "quantity" : 2,
+      },
+      {
+        "name": "envelopes",
+        "price": 19.95,
+        "quantity": 8,
+      },
+      {
+        "name": "pens",
+        "price": 56.12,
+        "quantity": 5,
+      },
+    ],
+  },
+  {
+    _id: 2,
+    items: [
+      {
+        "name" : "pencil",
+        "price" : 5.29,
+        "quantity" : 2,
+      },
+      {
+        "name": "envelopes",
+        "price": 19.95,
+        "quantity": 8,
+      },
+      {
+        "name": "backpack",
+        "price": 80.12,
+        "quantity": 1,
+      },
+      {
+        "name": "pens",
+        "price": 56.12,
+        "quantity": 5,
+      },
+    ],
+  }
+]);
