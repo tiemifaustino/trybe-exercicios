@@ -1,0 +1,42 @@
+// Múltiplos modificadores
+// ORDEM DO PROCESSO DE PUSH:
+// 1. Altera o *array* para adicionar os elementos na posição correta;
+// 2. Aplica a ordenação (`$sort`), se especificada;
+// 3. Limita o *array* (`$slice`), se especificado;
+// 4. Armazena o *array*.
+
+use('sales');
+db.supplies.drop();
+
+use('sales');
+db.supplies.updateOne(
+  { _id: 1 },
+  {
+    $push: {
+      items: {
+        $each: [ // $each -> adiciona múltiplos documentos ao array items;
+          {
+            "name" : "notepad",
+            "price" : 35.29,
+            "quantity" : 2,
+          },
+          {
+            "name": "envelopes",
+            "price": 19.95,
+            "quantity": 8,
+          },
+          {
+            "name": "pens",
+            "price": 56.12,
+            "quantity": 5,
+          },
+        ],
+        $sort: { quantity: -1 }, // $sort -> ordena todos os elementos alterados no array items pelo campo "quantity" em ordem decrescente;
+        $slice: 2, // $slice -> mantêm apenas os dois primeiros elementos ordenados no array items.
+      },
+    },
+  },
+  { upsert: true },
+);
+
+// Em resumo, essa operação mantém no array items apenas os dois documentos com a quantidade (campo quantity) mais alto.
