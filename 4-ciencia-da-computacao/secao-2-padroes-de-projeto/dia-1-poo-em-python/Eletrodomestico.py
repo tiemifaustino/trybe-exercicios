@@ -6,6 +6,7 @@ class Eletrodomestico:
         self.__voltagem = voltagem
         self.__ligado = False
         self.__amperagem_atual_no_motor = 0
+        self.__velocidade_maxima = 100
 
     def ligar(self, velocidade):
         self.__velocidade = velocidade
