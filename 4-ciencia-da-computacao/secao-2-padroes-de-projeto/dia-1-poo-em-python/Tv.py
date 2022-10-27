@@ -44,8 +44,9 @@ class Tv:
         except ValueError:
             f"Canal {numero_canal} inexistente"
         """
-        if numero_canal <= 1 or numero_canal >= 99:
+        if int(numero_canal) <= 1 or int(numero_canal) >= 99:
             raise ValueError(f"Canal {numero_canal} inexistente")
+        self.__canal = numero_canal
 
     def ligar_desligar(self):
         """
@@ -55,3 +56,27 @@ class Tv:
             self.__ligada = False
         """
         self.__ligada = not self.__ligada  # semelhante ao ! do Javascript
+
+    def __str__(self):
+        esta_ligada = ""
+        if self.__ligada is True:
+            esta_ligada = "ligada"
+            return f"""
+            Minha Tv tem {self.__tamanho} polegadas e está {esta_ligada}
+            no canal {self.__canal} com volume {self.__volume}
+            """
+        else:
+            esta_ligada = "desligada"
+            return f"""
+            Minha Tv tem {self.__tamanho} polegadas e está {esta_ligada}
+            """
+
+
+televisao = Tv("20", "4", "55", True)
+televisao.ligar_desligar()
+televisao.modificar_canal("9")
+televisao.aumentar_volume()
+televisao.aumentar_volume()
+televisao.diminuir_volume()
+televisao.ligar_desligar()
+print(televisao)
